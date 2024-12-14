@@ -5,7 +5,12 @@ import './style.css'
 // import '7.css/dist/7.css'
 
 // import './7css-scooped.scss'
-import '7.css/dist/7.scoped.css'
+
+// import '7.css/dist/7.scoped.css'
+// import '../styles/basic.scss'
+// import '../styles/7.css.modified/gui/index.scss'
+import '../styles/7.css.modified/gui/scoped.scss'
+
 // import 'xp.css/dist/XP.css'
 // import 'xp.css/dist/98.css'
 // import './desktop.scss'
@@ -34,8 +39,8 @@ export default class Application extends Component {
         })
         // useChildSubEnv({designer})
         onWillStart(async ()=>{
-            const res = await loadFile('/samples/form1.json')
-            designer.seed = JSON.parse(res)
+            // const res = await loadFile('/samples/form1.json')
+            // designer.seed = JSON.parse(res)
         })
         useSubEnv({designer})
     }

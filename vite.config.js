@@ -7,11 +7,11 @@ export default defineConfig({
     vitePluginCssGtk(),
     vitePluginCssMissplaceRoot(),
   ],
-  css: {
-    preprocessorOptions: {
-      scss: { // avoid annoying warning: The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
-        api: 'modern-compiler' // or "modern"
-      }
-    }
-  },
+  // css: {
+  //   preprocessorOptions: {
+  //     scss: { // avoid annoying warning: The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
+  //       api: 'modern-compiler' // or "modern"
+  //     }
+  //   }
+  // },
 });
