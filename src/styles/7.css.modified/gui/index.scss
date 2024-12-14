@@ -4,10 +4,14 @@
  * https://github.com/khang-nd/7.css/blob/main/LICENSE
  */
 
-@import "_variables.scss";
+ @import "_variables.scss";
+// >.window-body *:not(.DMRESET){
+>.window-body {
 @import "_global.scss";
 @import "_balloon.scss";
+// :not(.DMRESET){
 @import "_button.scss";
+//  }
 @import "_checkbox.scss";
 @import "_collapse.scss";
 @import "_combobox.scss";
@@ -26,4 +30,5 @@
 @import "_textbox.scss";
 @import "_treeview.scss";
 @import "_typography.scss";
+}
 @import "_window.scss";
