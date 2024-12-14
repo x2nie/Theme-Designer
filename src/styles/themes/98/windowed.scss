@@ -1,6 +1,8 @@
 .win98.window {
     // @import "./7.css.modified/gui/index.scss";
     @import "./index.scss";
+    
+    background: var(--surface);
     // @include fo;
     // background: red;
 }
