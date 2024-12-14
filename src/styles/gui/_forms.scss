@@ -71,7 +71,7 @@ option {
     background: #c0c0c0;
     box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
-&:disabled {
+/* &:disabled {
     color: var(--button-shadow);
     text-shadow: 1px 1px 0 var(--button-highlight);
     + {
@@ -80,7 +80,7 @@ option {
             text-shadow: 1px 1px 0 var(--button-highlight);
         }
     }
-}
+} */
 input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;

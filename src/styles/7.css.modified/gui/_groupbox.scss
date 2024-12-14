@@ -5,6 +5,7 @@ fieldset {
   padding: calc(2 * var(--border-width) + var(--element-spacing));
   padding-block-start: var(--element-spacing);
   margin: 0;
+  margin-bottom: 9px;
 
   legend {
     font: var(--font);
