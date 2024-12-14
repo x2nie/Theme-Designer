@@ -1,4 +1,14 @@
 #desktop-theme-form {
-    margin: 25px ;
+    left: 25px ;
+    top: 25px ;
     width: 600px;
+
+    .preview-box{
+        background: teal;
+        margin: 15px 25px;
+        min-height: 300px;
+        // overflow-y: scroll;
+        
+        box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+    }
 }

@@ -74,7 +74,7 @@
         </div>
       </div>
 
-      <t t-call="theme_preview"/>
+      <!-- <t t-call="theme_preview"/> -->
 </t>
 
 
@@ -135,8 +135,10 @@
   </li>
 </ul>
 
-            <div t-name="theme_preview" class="DMRESET winXP0 win980 win70" style="padding:30px;">
-                <div class="window win7 win980" style="width: 500px">
+            <div t-name="theme_preview" class="DMRESET preview-box" style="padding:30px;">
+                <div class="window win70 win98" 
+                  style="--dialog-blue:gold; --dialog-blue-light:lime; "
+                >
                     <div class="title-bar">
                         <div class="title-bar-text">A Window With Stuff In It</div>
                         <div class="title-bar-controls">
