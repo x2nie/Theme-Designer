@@ -3,7 +3,7 @@
 <t t-name="DesktopTheme.Form">
     
 
-    <div id="desktop-theme-form" class="window glass " style="max-width: 400px; z-index:0">
+    <div id="desktop-theme-form" class="window win980 win7 winXP0 glass active" style="z-index:0">
         <div class="title-bar">
           <div class="title-bar-text">Another window with contents</div>
           <div class="title-bar-controls">
@@ -13,7 +13,11 @@
           </div>
         </div>
         <div class="window-body has-space">
+
+
             <!-- <t t-call="sample_menu"/> -->
+            <!-- <t t-call="theme_preview"/> -->
+
         
           <menu role="tablist" aria-label="Window with Tabs">
             <button role="tab" aria-controls="music" aria-selected="true">Music</button>
@@ -25,20 +29,20 @@
             <fieldset>
               <legend>Today's mood</legend>
               <div class="field-row">
-                <input id="radio30" type="radio" name="fieldset-example2"/>
-                <label for="radio30">Nicki Minaj</label>
+                <input id="radio300" type="radio" name="fieldset-example20"/>
+                <label for="radio300">Nicki Minaj</label>
               </div>
               <div class="field-row">
-                <input id="radio31" type="radio" name="fieldset-example2"/>
-                <label for="radio31">Bell Towers</label>
+                <input id="radio310" type="radio" name="fieldset-example20"/>
+                <label for="radio310">Bell Towers</label>
               </div>
               <div class="field-row">
-                <input id="radio32" type="radio" name="fieldset-example2"/>
-                <label for="radio32">The Glamorous Monique</label>
+                <input id="radio320" type="radio" name="fieldset-example20"/>
+                <label for="radio320">The Glamorous Monique</label>
               </div>
               <div class="field-row">
-                <input id="radio33" type="radio" name="fieldset-example2"/>
-                <label for="radio33">EN. V</label>
+                <input id="radio330" type="radio" name="fieldset-example20"/>
+                <label for="radio330">EN. V</label>
               </div>
             </fieldset>
             <section class="field-row">
@@ -66,6 +70,8 @@
           </section>
         </div>
       </div>
+
+      <t t-call="theme_preview"/>
 </t>
 
 
@@ -125,4 +131,43 @@
     </ul>
   </li>
 </ul>
+
+            <div t-name="theme_preview" class="DMRESET winXP0 win98 win70" style="padding:30px;">
+                <div class="window win70 win98" style="width: 500px">
+                    <div class="title-bar">
+                        <div class="title-bar-text">A Window With Stuff In It</div>
+                        <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="window-body">
+                        <p>There's so much room for activities!</p>
+                        <fieldset>
+              <legend>Today's mood</legend>
+              <div class="field-row">
+                <input id="radio30" type="radio" name="fieldset-example2"/>
+                <label for="radio30">Nicki Minaj</label>
+              </div>
+              <div class="field-row">
+                <input id="radio31" type="radio" name="fieldset-example2"/>
+                <label for="radio31">Bell Towers</label>
+              </div>
+              <div class="field-row">
+                <input id="radio32" type="radio" name="fieldset-example2"/>
+                <label for="radio32">The Glamorous Monique</label>
+              </div>
+              <div class="field-row">
+                <input id="radio33" type="radio" name="fieldset-example2"/>
+                <label for="radio33">EN. V</label>
+              </div>
+            </fieldset>
+            <section class="field-row">
+              <button>Reset Alarm...</button>
+              <label>Try this to get some attention</label>
+            </section>
+                    </div>
+                </div>
+            </div>
 </templates>

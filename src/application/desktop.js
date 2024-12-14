@@ -6,7 +6,7 @@ import DesktopCursor from "./desktop-cursor";
 export class Desktop extends Component {
     static components = {DesktopTheme, DesktopIcons, DesktopCursor}
     static template = xml`
-        <div class="desktop xp0 win7 bluecurve0" style="">
+        <div class="desktop xp0 win70 win98 bluecurve0" style="">
 
             <DesktopIcons />
             <DesktopTheme />

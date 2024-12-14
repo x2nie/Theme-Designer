@@ -1,0 +1,7 @@
+// @use "./7.css.modified/gui/index.scss" as fo;
+.win07 {
+    // @import "./7.css.modified/gui/index.scss";
+    @import "./gui/index.scss";
+    // @include fo;
+    // background: red;
+}
