@@ -79,8 +79,8 @@ export const spec = {
 
 export const win95_colors = {
     iCaptionWidth: 12,
-    CaptionFont: {name: 'Tahoma', bold:true,},
-    MessageFont: {name: 'Arial', italic:true},
+    CaptionFont: {name: 'sans-serif', bold:true, italic:true},
+    MessageFont: {name: 'monospace', italic:true},
 
     ActiveBorder: 'rgb(192 192 192)',
     ActiveTitle: 'rgb(0 0 128)',

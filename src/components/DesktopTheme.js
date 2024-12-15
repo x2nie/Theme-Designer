@@ -38,7 +38,33 @@ export class DesktopTheme extends Component{
     windowStyle(){
         let ret = '\n'
         for(const [k,v] of Object.entries(this.data)){
-            ret += `--${k}: ${v};\n`;
+            if(v.name){
+                //? it is Font struct
+                // for(const n of ['name', 'color', 'color2', 'text']){
+                //     const key = scoop[n]
+                //     if(key != null){
+                //         this.data[key] = this.state[n]
+                //     }
+                // }
+                for(let [p, yn] of Object.entries(v)){
+                    switch (p) {
+                        case 'bold':
+                            ret += `--${k}-${p}: ${yn?'bold':100};\n`;
+                            break;
+                        case 'italic':
+                            ret += `--${k}-${p}: ${yn?'italic':'normal'};\n`;
+                            break;
+                        // case 'name':
+                        //     break;
+                            
+                        default:
+                            ret += `--${k}-${p}: ${yn};\n`;
+                            break;
+                    }
+                }
+            } else {
+                ret += `--${k}: ${v};\n`;
+            }
         }
         return ret;
     }
@@ -72,6 +98,12 @@ export class DesktopTheme extends Component{
             const key = scoop[n]
             if(key != null){
                 this.data[key] = this.state[n]
+            }
+        }
+        for(const n of ['name', 'bold', 'italic']){
+            const key = scoop['font']
+            if(key != null){
+                this.data[key][n] = this.state.font[n]
             }
         }
         this.state.fullCss = this.windowStyle()
