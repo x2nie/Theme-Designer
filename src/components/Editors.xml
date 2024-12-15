@@ -44,19 +44,24 @@
          </select>
       </div>
 
-      <div class="field-row-stacked" style="width: 65px;">
+      <div class="field-row-stacked small-width" >
          <label for="ed-size">Size</label>
          <input id="ed-size" t-model="state.size" type="text"/>
       </div>
 
       <div class="field-row-stacked" >
          <label for="ed-color">Color 1</label>
-         <input id="ed-color" t-model="data.ActiveTitle" type="color"/>
+         <FieldColor color="data.ActiveTitle">
+            <input id="ed-color" t-model="data.ActiveTitle" type="color"/>
+         </FieldColor>
       </div>
 
       <div class="field-row-stacked" >
          <label for="ed-color2">Color 2</label>
-         <input id="ed-color2" t-model="data.ActiveTitle" type="color"/>
+         <!-- <input id="ed-color2" t-model="data.ActiveTitle" type="color"/> -->
+         <FieldColor color="data.ActiveTitle">
+            <input id="ed-color2" t-model="data.ActiveTitle" type="color"/>
+         </FieldColor>
       </div>
 
    </div>
@@ -67,21 +72,36 @@
    <div>
 
       <div class="field-row-stacked" >
-         <label for="ed-items">Font</label>
-         <select id="ed-items" t-model="state.theme">
-            <option value="win98">Classic</option>
-            <option value="winXP">XP</option>
+         <label for="ed-font-name">Font</label>
+         <select id="ed-font-name" t-model="state.font.name">
+            <option value="Tahoma">Tahoma</option>
+            <option value="Arial">Arial</option>
+            <option value="winXP">Times New Roman</option>
             <option value="win7">Win 7</option>
          </select>
       </div>
 
-      <div class="field-row-stacked" >
-         <label for="ed-items">Size</label>
-         <select id="ed-items" t-model="state.theme">
-            <option value="win98">Classic</option>
-            <option value="winXP">XP</option>
-            <option value="win7">Win 7</option>
+      <div class="field-row-stacked small-width" >
+         <label for="ed-font-size">Size</label>
+         <select id="ed-font-size" t-model="state.font_size">
+            <option t-foreach="[8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]" t-as="fs" t-key="fs" t-att-value="fs" t-out="fs"/>
          </select>
+      </div>
+
+      <div class="field-row-stacked" >
+         <label for="ed-font-color">Color 2</label>
+         <div>
+         <!-- <input id="ed-font-color" t-model="data.ActiveTitle" type="color"/> -->
+         <!-- <FieldColor id="ed-font-color" model="data.ActiveTitle"/> -->
+         <FieldColor id="ed-font-color" color="data.ActiveTitle">
+            <input id="ed-font-color2" t-model="data.ActiveTitle" type="color"/>
+         </FieldColor>
+         <!-- <input id="ed-font-color2" t-model="data.ActiveTitle" type="text"/> -->
+         <i style="width:10px"/>
+         <button class="speed bold">B</button>
+         <button class="speed">/</button>
+         <!-- <input t-model="data.ActiveTitle" type="color"/> -->
+         </div>
       </div>
 
    </div>

@@ -1,0 +1,47 @@
+.win98.window button.btn-color {
+    min-width: 49px;
+    padding: 0;
+}
+.btn-color {
+    padding: 10px;
+    min-width: 30px;
+    position: relative;
+
+    i {
+        position: absolute;
+        left: 5px;
+        top: 4px;
+        width: 24px;
+        height: 14px;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+    
+    &::before{
+        position: absolute;
+        content: '';
+        left: 34px;
+        top: 4px;
+        height: 14px;
+        border-left: 1px solid grey;
+        border-right: 1px solid white;
+    }
+
+    &::after{
+        position: absolute;
+        content: '';
+        left: 38px;
+        top: 10px;
+        height: 4px;
+        border-top: 3px solid black;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+    }
+
+    input {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        // max-height: 1px;
+    }
+}

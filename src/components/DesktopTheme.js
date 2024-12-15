@@ -1,4 +1,5 @@
 import { Component, useState } from "@odoo/owl";
+import { FieldColor } from "./FieldColor";
 import { spec, win95_colors } from "./spec";
 
 import './DesktopTheme.scss'
@@ -7,11 +8,13 @@ import './Editors.scss'
 
 export class DesktopTheme extends Component{
     static template = "DesktopTheme.Form"
+    static components = {FieldColor}
     setup(){
         this.state = useState({
             theme: 'win98',
             item: 'Desktop',
             size: 10,
+            font: {name:'Arial'}
         })
         this.data = useState(win95_colors)
     }
