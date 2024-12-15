@@ -72,6 +72,9 @@
     
     .win98.window {
         // --element-spacing:0; 
+        --surface: var(--ButtonFace);
+        --button-face: var(--ButtonFace);
+        --button-color: var(--ButtonText);
         --dialog-blue: var(--InactiveTitle); 
         --dialog-blue-light: var(--GradientInactiveTitle); 
         .title-bar-text{color: var(--InactiveTitleText)}
@@ -80,6 +83,10 @@
             --dialog-blue: var(--ActiveTitle); 
             --dialog-blue-light: var(--GradientActiveTitle); 
             .title-bar-text{color: var(--TitleText)}
+        }
+        
+        button{
+            color: var(--ButtonText)
         }
 
         textarea {

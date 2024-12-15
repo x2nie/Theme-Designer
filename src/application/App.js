@@ -12,7 +12,7 @@ import './style.css'
 // import '../styles/7.css.modified/gui/scoped.scss'
 // import '../styles/themes/98/scoped.scss'
 
-import '../styles/gui/_global.scss'
+// import '../styles/gui/_global.scss'
 // import '../styles/gui/index.scss'
 import '../styles/themes/98/windowed.scss'
 import '../styles/themes/XP/windowed.scss'

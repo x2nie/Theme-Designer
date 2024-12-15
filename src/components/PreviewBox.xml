@@ -70,7 +70,7 @@
         <div class="window-body" >
             <!-- <p>There's so much room for activities!</p> -->
             Message Text
-            <button>OK</button>
+            <button data-el="Surface">OK</button>
             
         </div>
 </div>

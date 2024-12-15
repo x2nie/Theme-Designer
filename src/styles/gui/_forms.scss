@@ -44,7 +44,8 @@ select {
     -moz-appearance: none;
     position: relative;
     padding-right: 32px;
-    background-image: url("./icon/button-down.svg");
+    // background-image: url("./icon/button-down.svg");
+    background-image: url("./icon/button-down.svg") , linear-gradient(to left, var(--surface) 16px, transparent 16px);
     background-position: top 2px right 2px;
     background-repeat: no-repeat;
     border-radius: 0;

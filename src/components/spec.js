@@ -46,6 +46,12 @@ export const spec = {
         font: 'MessageFont'
     },
 
+    Surface: {
+        label: '3D Object',
+        color: 'ButtonFace',
+        text: 'ButtonText', 
+    },
+
     // ActiveBorder: {label: active_border},
     // AppWorkspace: {label: app_workspace},
     // Background: {label: background},

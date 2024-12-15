@@ -64,7 +64,7 @@ summary {
     }
 }
 ::-webkit-scrollbar-corner {
-    background: var(--button-face);
+    background: var(--surface);
 }
 ::-webkit-scrollbar {
     width: 16px;
@@ -73,13 +73,13 @@ summary {
     }
 }
 ::-webkit-scrollbar-corner {
-    background: var(--button-face);
+    background: var(--surface);
 }
 ::-webkit-scrollbar-track {
-    background-image: url("./icon/scrollbar-background.svg");
+    // background-image: url("./icon/scrollbar-background.svg");
 }
 ::-webkit-scrollbar-thumb {
-    background-color: var(--button-face);
+    background-color: var(--surface);
     box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
 ::-webkit-scrollbar-button:horizontal:start:decrement,
@@ -93,10 +93,24 @@ summary {
         &:start {
             height: 17px;
             background-image: url("./icon/button-up.svg");
+            // border: 3px solid lime;
+            // content: 'X';
+            // &::before{
+            //     content: '^';
+            //     color: red;
+            // }
+            // background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill0='var(--button-color)' style='fill:var(--button-color);fill:blue;'><polygon points='0,0 100,0 50,50'/></svg>");
+            // height: 16px;
+            // width: 16px;
+            // background-size: contain;
+            // background-position: center 2px;
         }
         &:end {
+            width: 16px;
             height: 17px;
             background-image: url("./icon/button-down.svg");
+            background-color: var(--surface);
+            color: lime;
         }
     }
     &:horizontal {
