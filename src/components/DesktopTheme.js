@@ -10,6 +10,7 @@ export class DesktopTheme extends Component{
     static template = "DesktopTheme.Form"
     static components = {FieldColor}
     setup(){
+        this.data = useState(win95_colors);
         this.state = useState({
             theme: 'win98',
             item: 'Desktop',
@@ -18,8 +19,9 @@ export class DesktopTheme extends Component{
             color: 'lime',
             color2: 'fuchsia',
             mapping: spec.Desktop,
+            fullCss : this.windowStyle(),
         })
-        this.data = useState(win95_colors)
+
     }
 
     get sel_items(){
@@ -27,7 +29,7 @@ export class DesktopTheme extends Component{
     }
 
     windowStyle(){
-        let ret = ''
+        let ret = '\n'
         for(const [k,v] of Object.entries(this.data)){
             ret += `--${k}: ${v};\n`;
         }
@@ -36,6 +38,8 @@ export class DesktopTheme extends Component{
 
     previewClick(ev){
         // console.log('EL:', findEl(ev.target))
+        console.log('state:', this.state)
+        console.log('data:', this.data)
         const item = findEl(ev.target)
         const scoop = spec[item];
         if(!scoop){

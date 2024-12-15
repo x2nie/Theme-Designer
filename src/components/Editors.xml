@@ -44,7 +44,7 @@
 
       <div class="field-row-stacked small-width" >
          <label for="ed-size">Size</label>
-         <input id="ed-size" t-model="state.size" type="text"/>
+         <input id="ed-size" t-model="state.size" type="text" t-att="{'disabled': !state.mapping.size}"/>
       </div>
 
       <div class="field-row-stacked" >
@@ -90,7 +90,7 @@
          <div>
          <!-- <input id="ed-font-color" t-model="data.ActiveTitle" type="color"/> -->
          <!-- <FieldColor id="ed-font-color" model="data.ActiveTitle"/> -->
-         <FieldColor id="ed-font-color" color="state.text" disabled="!state.mapping.font">
+         <FieldColor id="ed-font-color" color="state.text" disabled="!state.mapping.text and !state.mapping.font">
             <input id="ed-font-color2" t-model="state.text" type="color"/>
          </FieldColor>
          <!-- <input id="ed-font-color2" t-model="data.ActiveTitle" type="text"/> -->

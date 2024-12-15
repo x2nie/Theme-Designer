@@ -2,7 +2,7 @@
 
 <div t-name="theme_preview" class="DMRESET preview-box" 
     data-el="Desktop"
-    t-att-style="windowStyle()"
+    t-att-style="state.fullCss"
     t-on-click="previewClick" >
     
     <t t-call="sample_app.inactive"/>
@@ -48,7 +48,7 @@
             <!-- <p>There's so much room for activities!</p> -->
             <div id="window-and-scrollbar" data-el="Scrollbar">
                 <div>
-                    <textarea data-el="window-text" 
+                    <textarea data-el="Input" 
                         style="box-shadow:none; border:none;"
                         rows="6" readonly="readonly">Window Text</textarea>
                 </div>
@@ -58,15 +58,16 @@
 </div>
 
 <div t-name="sample_app.message-box" t-attf-class="window {{state.theme}} win70 win980 active message-box" 
-            style="--element-spacing:0; --0dialog-blue:gold; --0dialog-blue-light:lime; "
+        data-el="Form"
+        style="--element-spacing:0; --0dialog-blue:gold; --0dialog-blue-light:lime; "
     >
         <div class="title-bar" data-el="ActiveTitle">
             <div class="title-bar-text">Message Box</div>
-            <div class="title-bar-controls" data-el="CaptionHeight">
+            <div class="title-bar-controls" data-el="CaptionButton">
             <button aria-label="Close"></button>
             </div>
         </div>
-        <div class="window-body" data-el="WindowText">
+        <div class="window-body" >
             <!-- <p>There's so much room for activities!</p> -->
             Message Text
             <button>OK</button>

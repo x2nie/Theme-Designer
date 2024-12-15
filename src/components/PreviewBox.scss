@@ -79,5 +79,10 @@
             --dialog-blue-light: var(--GradientActiveTitle); 
             .title-bar-text{color: var(--TitleText)}
         }
+
+        textarea {
+            background: var(--Window);
+            color: var(--WindowText);
+        }
     }
 }

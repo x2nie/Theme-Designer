@@ -31,7 +31,20 @@ export const spec = {
     Desktop: {
         label: 'Desktop',
         color: 'Background'
-    }
+    },
+
+
+    Input: {
+        label: 'Window',
+        color: 'Window',
+        text: 'WindowText', 
+    },
+
+    Form: {
+        label: 'Message Box',
+        // text: 'WindowText', 
+        font: 'MessageFont'
+    },
 
     // ActiveBorder: {label: active_border},
     // AppWorkspace: {label: app_workspace},
@@ -67,6 +80,7 @@ export const spec = {
 export const win95_colors = {
     iCaptionWidth: 12,
     CaptionFont: {name: 'Tahoma', bold:true,},
+    MessageFont: {name: 'Arial', italic:true},
 
     ActiveBorder: 'rgb(192 192 192)',
     ActiveTitle: 'rgb(0 0 128)',
