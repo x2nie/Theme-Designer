@@ -14,7 +14,8 @@ export class DesktopTheme extends Component{
             theme: 'win98',
             item: 'Desktop',
             size: 10,
-            font: {name:'Arial'}
+            font: {name:'Arial'},
+            mapping: spec.Desktop,
         })
         this.data = useState(win95_colors)
     }
@@ -25,7 +26,9 @@ export class DesktopTheme extends Component{
 
     previewClick(ev){
         // console.log('EL:', findEl(ev.target))
-        this.state.item = findEl(ev.target)
+        const item = findEl(ev.target)
+        this.state.item = item;
+        this.state.mapping = spec[item];
     }
 }
 

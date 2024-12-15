@@ -17,9 +17,10 @@
         box-sizing: border-box;
     }
     
-    &::before{
+    s{
         position: absolute;
-        content: '';
+        margin: 0 !important;
+        line-height: 1;
         left: 34px;
         top: 4px;
         height: 14px;
@@ -43,5 +44,23 @@
         inset: 0;
         opacity: 0;
         // max-height: 1px;
+    }
+
+    &[disabled]{
+        input { display: none;}
+        i { display: none;}
+        &::before{
+            position: absolute;
+            content: '';
+            left: 39px;
+            top: 11px;
+            height: 4px;
+            border-top: 3px solid white;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+        }
+        &::after {
+            border-top-color: grey;
+        }
     }
 }
