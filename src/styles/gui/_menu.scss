@@ -33,7 +33,7 @@ ul {
         &:focus-within,
         &.selected, // theme designer need it
         &:hover {
-          background: #3399ff;
+          background: navy;
           color: #fff;
           outline: none;
           ~ [role="menuitem"]:focus,

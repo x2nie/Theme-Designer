@@ -5,6 +5,7 @@
     
     <t t-call="sample_app.inactive"/>
     <t t-call="sample_app.active"/>
+    <t t-call="sample_app.message-box"/>
 </div>
 
 
@@ -47,6 +48,23 @@
                         rows="8" readonly="readonly">Window Text</textarea>
                 </div>
             </div>
+            
+        </div>
+</div>
+
+<div t-name="sample_app.message-box" class="window win70 win98 active message-box" 
+            style="--element-spacing:0; --0dialog-blue:gold; --0dialog-blue-light:lime; "
+    >
+        <div class="title-bar" data-el="ActiveTitle">
+            <div class="title-bar-text">Message Box</div>
+            <div class="title-bar-controls" data-el="CaptionHeight">
+            <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body" data-el="WindowText">
+            <!-- <p>There's so much room for activities!</p> -->
+            Message Text
+            <button>OK</button>
             
         </div>
 </div>

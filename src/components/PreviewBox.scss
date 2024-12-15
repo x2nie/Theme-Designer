@@ -35,5 +35,24 @@
             }
         }
     }
+
+    .message-box{
+        left: 175px;
+        top:257px;
+        width: 167px;
+        height: 73px;
+
+        .window-body{
+            position: relative;
+
+            
+            button {
+                position: absolute;
+                left: 45px;
+                top: 25px;
+            }
+        }
+
+    }
     
 }
