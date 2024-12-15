@@ -1,0 +1,39 @@
+.preview-box {
+    position: relative;
+    width:400px;
+    height: 340px;
+
+    .window {
+        position: absolute;
+    }
+    .sample_app{
+        // inactive
+        left: 161px;
+        top: 157px;
+        width: 200px;
+        height: 147px;
+
+        &.active {
+            left: 166px;
+            top: 182px;
+        }
+
+        #window-and-scrollbar {
+            box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+            padding:2px;
+
+            > div {
+                overflow-y: scroll;
+                pointer-events: none;
+
+                textarea{
+                    pointer-events: all;
+                    display: block;
+                    width: 100%;
+                    resize: none;
+                }
+            }
+        }
+    }
+    
+}
