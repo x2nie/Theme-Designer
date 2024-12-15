@@ -78,7 +78,7 @@
 <ul t-name="sample_app.menu" role="menubar" class="can-hover">
   <li role="menuitem" tabindex="0" class="no-hover">Normal</li>
   <li role="menuitem" disabled="disabled" tabindex="0">Disabled</li>
-  <li role="menuitem" tabindex="0" class="selected">Selected</li>
+  <li role="menuitem" tabindex="0" class="selected" data-el="Selection">Selected</li>
 </ul>
 
 

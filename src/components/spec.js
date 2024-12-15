@@ -52,6 +52,13 @@ export const spec = {
         text: 'ButtonText', 
     },
 
+    Selection: {
+        label: 'Selected Items',
+        color: 'Hilight', 
+        text: 'HilightText', 
+        font: 'MenuFont',
+    },
+
     // ActiveBorder: {label: active_border},
     // AppWorkspace: {label: app_workspace},
     // Background: {label: background},
@@ -87,6 +94,7 @@ export const win95_colors = {
     iCaptionWidth: 12,
     CaptionFont: {name: 'sans-serif', bold:true, italic:true},
     MessageFont: {name: 'monospace', italic:true},
+    MenuFont: {name: 'monospace'},
 
     ActiveBorder: 'rgb(192 192 192)',
     ActiveTitle: 'rgb(0 0 128)',

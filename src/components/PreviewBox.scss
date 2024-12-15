@@ -77,6 +77,9 @@
         --button-color: var(--ButtonText);
         --dialog-blue: var(--InactiveTitle); 
         --dialog-blue-light: var(--GradientInactiveTitle); 
+        --hilight: var(--Hilight);
+        --hilight-text: var(--HilightText);
+
         .title-bar-text{color: var(--InactiveTitleText)}
         
         &.active{
