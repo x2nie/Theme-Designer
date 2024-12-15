@@ -27,12 +27,20 @@ export class DesktopTheme extends Component{
                 console.log('preparing-to-apply-cangess')
                 this.applyChanges()
             },
-            () => [this.state.color, this.state.text]
+            () => [this.state.color, this.state.text, JSON.stringify(this.state.font)]
         )
     }
 
     get sel_items(){
         return spec
+    }
+
+    toggleBold(){
+        this.state.font.bold = !this.state.font.bold;
+    }
+    toggleItalic(){
+        this.state.font.italic = !this.state.font.italic;
+
     }
 
     windowStyle(){

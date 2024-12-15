@@ -97,8 +97,8 @@
          </FieldColor>
          <!-- <input id="ed-font-color2" t-model="data.ActiveTitle" type="text"/> -->
          <i style="width:10px"/>
-         <button t-attf-class="speed bold {{state.font and state.font.bold?'active':''}}" t-att="{'disabled': !state.mapping.font}">B</button>
-         <button t-attf-class="speed {{state.font and state.font.italic?'active':''}}" t-att="{'disabled': !state.mapping.font}">/</button>
+         <button t-on-click="toggleBold" t-attf-class="speed bold {{state.font and state.font.bold?'active':''}}" t-att="{'disabled': !state.mapping.font}">B</button>
+         <button t-on-click="toggleItalic" t-attf-class="speed {{state.font and state.font.italic?'active':''}}" t-att="{'disabled': !state.mapping.font}">/</button>
          <!-- <input t-model="data.ActiveTitle" type="color"/> -->
          </div>
       </div>
