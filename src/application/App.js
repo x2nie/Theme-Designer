@@ -15,7 +15,7 @@ import './style.css'
 import '../styles/gui/_global.scss'
 // import '../styles/gui/index.scss'
 import '../styles/themes/98/windowed.scss'
-// import '../styles/themes/XP/windowed.scss'
+import '../styles/themes/XP/windowed.scss'
 import '../styles/7.css.modified/gui/windowed.scss'
 
 // import 'xp.css/dist/XP.css'

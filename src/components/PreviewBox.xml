@@ -1,20 +1,24 @@
 <templates>
 
 <div t-name="theme_preview" class="DMRESET preview-box" 
+    data-el="Desktop"
     style="" t-on-click="previewClick" >
     
     <t t-call="sample_app.inactive"/>
     <t t-call="sample_app.active"/>
     <t t-call="sample_app.message-box"/>
+
+
+
 </div>
 
 
-<div t-name="sample_app.inactive" class="window win70 win98 sample_app" 
+<div t-name="sample_app.inactive" t-attf-class="window {{state.theme}} win70 win980 sample_app" 
             style="--dialog-blue:grey; --dialog-blue-light:silver; "
     >
         <div class="title-bar" data-el="InactiveTitle">
             <div class="title-bar-text">Inactive Window</div>
-            <div class="title-bar-controls" data-el="CaptionHeight">
+            <div class="title-bar-controls" data-el="CaptionButton">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
             <button aria-label="Close"></button>
@@ -27,12 +31,12 @@
 </div>
 
 
-<div t-name="sample_app.active" class="window win70 win98 active sample_app" 
+<div t-name="sample_app.active" t-attf-class="window {{state.theme}} win70 win980 active sample_app" 
             style="--element-spacing:0; --0dialog-blue:gold; --0dialog-blue-light:lime; "
     >
         <div class="title-bar" data-el="ActiveTitle">
             <div class="title-bar-text">Active Window</div>
-            <div class="title-bar-controls" data-el="CaptionHeight">
+            <div class="title-bar-controls" data-el="CaptionButton">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
             <button aria-label="Close"></button>
@@ -45,14 +49,14 @@
                 <div>
                     <textarea data-el="window-text" 
                         style="box-shadow:none; border:none;"
-                        rows="8" readonly="readonly">Window Text</textarea>
+                        rows="6" readonly="readonly">Window Text</textarea>
                 </div>
             </div>
             
         </div>
 </div>
 
-<div t-name="sample_app.message-box" class="window win70 win98 active message-box" 
+<div t-name="sample_app.message-box" t-attf-class="window {{state.theme}} win70 win980 active message-box" 
             style="--element-spacing:0; --0dialog-blue:gold; --0dialog-blue-light:lime; "
     >
         <div class="title-bar" data-el="ActiveTitle">
@@ -74,5 +78,7 @@
   <li role="menuitem" disabled="disabled" tabindex="0">Disabled</li>
   <li role="menuitem" tabindex="0" class="selected">Selected</li>
 </ul>
+
+
 
 </templates>

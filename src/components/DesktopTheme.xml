@@ -13,7 +13,10 @@
           </div>
         </div>
 
-        <t t-call="theme_preview"/>
+        <div class="neck">
+          <t t-call="theme_preview"/>
+          <!-- <t t-call="Editors"/> -->
+        </div>
 
         <div class="window-body has-space">
 
@@ -21,6 +24,7 @@
             <!-- <t t-call="sample_menu"/> -->
             <!-- <t t-call="theme_preview"/> -->
 
+          <t t-call="Editors"/>
         
           <menu role="tablist" aria-label="Window with Tabs">
             <button role="tab" aria-controls="music" aria-selected="true">Music</button>
@@ -28,6 +32,8 @@
             <button role="tab" aria-controls="food">Food</button>
           </menu>
           <article role="tabpanel" id="music">
+
+
             <p>Set your listening preferences</p>
             <fieldset>
               <legend>Today's mood</legend>

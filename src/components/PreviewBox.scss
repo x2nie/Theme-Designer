@@ -16,6 +16,8 @@
         &.active {
             left: 166px;
             top: 182px;
+            width: 218px;
+            height: 122px;
         }
 
         #window-and-scrollbar {
@@ -45,7 +47,7 @@
         .window-body{
             position: relative;
 
-            
+
             button {
                 position: absolute;
                 left: 45px;
@@ -55,4 +57,11 @@
 
     }
     
+}
+
+.preview-box .editors-box{
+
+    #ed-items {
+        left: 30px;
+    }
 }

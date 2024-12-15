@@ -1,0 +1,22 @@
+#editors-box{
+    // position: absolute;
+    > div {
+        .field-row-stacked {
+            display: inline-flex;
+            margin-left: 10px;
+            margin-bottom: 6px;
+            --grouped-element-spacing: 3px; // editor margin-top
+            --big-width: 195px;
+
+            &.big-width{
+                width: var(--big-width);
+            }
+            
+            &:first-child {
+                margin-left: 0;
+                // background: red;
+                width: var(--big-width);
+            }
+        }
+    }
+}
