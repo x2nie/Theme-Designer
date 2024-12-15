@@ -65,3 +65,19 @@
         left: 30px;
     }
 }
+
+// colors
+.preview-box {
+    .win98.window {
+        // --element-spacing:0; 
+        --dialog-blue: var(--InactiveTitle); 
+        --dialog-blue-light: var(--GradientInactiveTitle); 
+        .title-bar-text{color: var(--InactiveTitleText)}
+        
+        &.active{
+            --dialog-blue: var(--ActiveTitle); 
+            --dialog-blue-light: var(--GradientActiveTitle); 
+            .title-bar-text{color: var(--TitleText)}
+        }
+    }
+}

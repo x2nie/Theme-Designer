@@ -2,8 +2,7 @@
 
 <div t-name="Editors" id="editors-box">
 
-   <!-- engine -->
-   <div>
+   <div> <!-- engine -->
       <div class="field-row-stacked" >
          <label for="ed-theme">Window &amp; Border</label>
          <select id="ed-theme" t-model="state.theme">
@@ -14,9 +13,8 @@
       </div>
    </div>
    
-   <!-- color scheme -->
-   <div>
-
+   
+   <div> <!-- color scheme -->
       <div class="field-row-stacked" >
          <label for="ed-items">Color Scheme</label>
          <select id="ed-items" t-model="state.theme">
@@ -34,8 +32,8 @@
 
    </div>
    
-   <!-- Item -->
-   <div>
+   
+   <div> <!-- Item -->
 
       <div class="field-row-stacked" >
          <label for="ed-items">Items</label>
@@ -51,16 +49,16 @@
 
       <div class="field-row-stacked" >
          <label for="ed-color">Color 1</label>
-         <FieldColor color="data.ActiveTitle">
-            <input id="ed-color" t-model="data.ActiveTitle" type="color"/>
+         <FieldColor color="state.color" disabled="!state.mapping.color">
+            <input id="ed-color" t-model="state.color" type="color"/>
          </FieldColor>
       </div>
 
       <div class="field-row-stacked" >
          <label for="ed-color2">Color 2</label>
          <!-- <input id="ed-color2" t-model="data.ActiveTitle" type="color"/> -->
-         <FieldColor color="data.ActiveTitle">
-            <input id="ed-color2" t-model="data.ActiveTitle" type="color"/>
+         <FieldColor color="state.color2" disabled="!state.mapping.color2">
+            <input id="ed-color2" t-model="state.color2" type="color"/>
          </FieldColor>
       </div>
 
@@ -92,8 +90,8 @@
          <div>
          <!-- <input id="ed-font-color" t-model="data.ActiveTitle" type="color"/> -->
          <!-- <FieldColor id="ed-font-color" model="data.ActiveTitle"/> -->
-         <FieldColor id="ed-font-color" color="data.ActiveTitle" disabled="!state.mapping.font">
-            <input id="ed-font-color2" t-model="data.ActiveTitle" type="color"/>
+         <FieldColor id="ed-font-color" color="state.text" disabled="!state.mapping.font">
+            <input id="ed-font-color2" t-model="state.text" type="color"/>
          </FieldColor>
          <!-- <input id="ed-font-color2" t-model="data.ActiveTitle" type="text"/> -->
          <i style="width:10px"/>

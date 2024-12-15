@@ -15,6 +15,8 @@ export class DesktopTheme extends Component{
             item: 'Desktop',
             size: 10,
             font: {name:'Arial'},
+            color: 'lime',
+            color2: 'fuchsia',
             mapping: spec.Desktop,
         })
         this.data = useState(win95_colors)
@@ -24,11 +26,33 @@ export class DesktopTheme extends Component{
         return spec
     }
 
+    windowStyle(){
+        let ret = ''
+        for(const [k,v] of Object.entries(this.data)){
+            ret += `--${k}: ${v};\n`;
+        }
+        return ret;
+    }
+
     previewClick(ev){
         // console.log('EL:', findEl(ev.target))
         const item = findEl(ev.target)
+        const scoop = spec[item];
+        if(!scoop){
+            console.log('not found scoop:', item)
+            return
+        }
         this.state.item = item;
-        this.state.mapping = spec[item];
+        this.state.mapping = scoop;
+        //? prepare .state
+        for(const [k,v] of Object.entries(scoop)){
+            this.state[k] = win95_colors[v]
+        }
+    }
+    fillState(scoop){
+        for(const [k,v] of Object.entries(scoop)){
+            this.state[k] = win95_colors[v]
+        }
     }
 }
 

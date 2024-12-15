@@ -2,7 +2,8 @@
 
 <div t-name="theme_preview" class="DMRESET preview-box" 
     data-el="Desktop"
-    style="" t-on-click="previewClick" >
+    t-att-style="windowStyle()"
+    t-on-click="previewClick" >
     
     <t t-call="sample_app.inactive"/>
     <t t-call="sample_app.active"/>
@@ -14,7 +15,7 @@
 
 
 <div t-name="sample_app.inactive" t-attf-class="window {{state.theme}} win70 win980 sample_app" 
-            style="--dialog-blue:grey; --dialog-blue-light:silver; "
+            style0="--dialog-blue:grey; --dialog-blue-light:silver; "
     >
         <div class="title-bar" data-el="InactiveTitle">
             <div class="title-bar-text">Inactive Window</div>
