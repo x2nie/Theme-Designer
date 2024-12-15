@@ -40,10 +40,10 @@ export class DesktopTheme extends Component{
     }
     toggleItalic(){
         this.state.font.italic = !this.state.font.italic;
-
     }
 
     windowStyle(){
+        //? generate css for html
         let ret = '\n'
         for(const [k,v] of Object.entries(this.data)){
             if(v.name){
