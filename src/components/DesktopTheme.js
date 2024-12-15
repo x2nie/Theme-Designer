@@ -1,4 +1,4 @@
-import { Component, useState } from "@odoo/owl";
+import { Component, useEffect, useState } from "@odoo/owl";
 import { FieldColor } from "./FieldColor";
 import { spec, win95_colors } from "./spec";
 
@@ -16,12 +16,19 @@ export class DesktopTheme extends Component{
             item: 'Desktop',
             size: 10,
             font: {name:'Arial'},
-            color: 'lime',
+            color: win95_colors.Background,//'lime',
             color2: 'fuchsia',
             mapping: spec.Desktop,
             fullCss : this.windowStyle(),
         })
-
+        useEffect(
+            //? if user click any of colors or sizes, apply to data-then-CSS!
+            ()=>{
+                console.log('preparing-to-apply-cangess')
+                this.applyChanges()
+            },
+            () => [this.state.color, this.state.text]
+        )
     }
 
     get sel_items(){
@@ -57,6 +64,17 @@ export class DesktopTheme extends Component{
         for(const [k,v] of Object.entries(scoop)){
             this.state[k] = win95_colors[v]
         }
+    }
+    applyChanges(){
+        // user click(state) --> send to html/css
+        const scoop = this.state.mapping
+        for(const n of ['size', 'color', 'color2', 'text']){
+            const key = scoop[n]
+            if(key != null){
+                this.data[key] = this.state[n]
+            }
+        }
+        this.state.fullCss = this.windowStyle()
     }
 }
 
