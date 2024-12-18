@@ -44,7 +44,9 @@
 
       <div class="field-row-stacked small-width" >
          <label for="ed-size">Size</label>
-         <input id="ed-size" t-model="state.size" type="text" t-att="{'disabled': !state.mapping.size}"/>
+         <FieldSpin disabled="!state.mapping.color2" state="state" field="'size'">
+            <input id="ed-size" t-model="state.size" type="text" t-att="{'disabled': !state.mapping.size}"/>
+         </FieldSpin>
       </div>
 
       <div class="field-row-stacked" >
