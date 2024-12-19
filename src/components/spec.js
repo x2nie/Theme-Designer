@@ -50,12 +50,27 @@ export const spec = {
         label: '3D Object',
         color: 'ButtonFace',
         text: 'ButtonText', 
+        size: 'iFooBar',
     },
+
+    MDI: {
+        label: 'Application Background',
+        color: 'AppWorkspace',
+    },
+
+    // MENUS:------------- \
 
     Selection: {
         label: 'Selected Items',
         color: 'Hilight', 
         text: 'HilightText', 
+        font: 'MenuFont',
+    },
+
+    Menu: {
+        label: 'Menu',
+        color: 'MenuBar', 
+        text: 'MenuText', 
         font: 'MenuFont',
     },
 
@@ -91,7 +106,10 @@ export const spec = {
 }
 
 export const win95_colors = {
+    iFooBar: 8, //dummy for dev mode only
     iCaptionWidth: 12,
+    iMenuHeight: 12, //menubar.height
+    iMenuWidth: 12,  //popup.min-width?
     CaptionFont: {name: 'sans-serif', bold:true, italic:true},
     MessageFont: {name: 'monospace', italic:true},
     MenuFont: {name: 'monospace'},

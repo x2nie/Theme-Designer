@@ -1,0 +1,41 @@
+.window {
+    font-size: 11px;
+}
+
+[role=menubar], .menu-bar {
+    background: red;
+    display: flex;
+}
+ul[role=menubar], ul.menu-bar {
+    background: yellow;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+
+    // li {
+    //     display: inline-block;
+    // }
+}
+
+.title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-bar-text {
+    flex-grow: 1;
+    font-weight: --var(--CaptionFont-bold, bold);
+    color: var(--TitleText);
+}
+
+.title-bar-controls {
+    display: flex;
+    button {
+        padding: 0;
+        display: block;
+        &:focus {
+            outline: none;
+        }
+    }
+}

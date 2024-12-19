@@ -1,5 +1,6 @@
 import { Component, useEffect, useState } from "@odoo/owl";
 import { FieldColor } from "./FieldColor";
+import { FieldSpin } from "./FieldSpin";
 import { spec, win95_colors } from "./spec";
 
 import './DesktopTheme.scss'
@@ -8,7 +9,7 @@ import './Editors.scss'
 
 export class DesktopTheme extends Component{
     static template = "DesktopTheme.Form"
-    static components = {FieldColor}
+    static components = {FieldColor, FieldSpin}
     setup(){
         this.data = useState(win95_colors);
         this.state = useState({
@@ -27,7 +28,7 @@ export class DesktopTheme extends Component{
                 console.log('preparing-to-apply-cangess')
                 this.applyChanges()
             },
-            () => [this.state.color, this.state.text, JSON.stringify(this.state.font)]
+            () => [this.state.size, this.state.color, this.state.color2, this.state.text, JSON.stringify(this.state.font)]
         )
     }
 

@@ -9,7 +9,7 @@
     .sample_app{
         // inactive
         left: 161px;
-        top: 157px;
+        top: 127px;
         width: 200px;
         height: 147px;
 
@@ -70,7 +70,7 @@
 .preview-box {
     background-color: var(--Background);
     
-    .win98.window {
+    .winNT.window,.win98.window {
         // --element-spacing:0; 
         --surface: var(--ButtonFace);
         --button-face: var(--ButtonFace);
@@ -79,6 +79,7 @@
         --dialog-blue-light: var(--GradientInactiveTitle); 
         --hilight: var(--Hilight);
         --hilight-text: var(--HilightText);
+        --menu-bar: var(--MenuBar);
 
         .title-bar-text{color: var(--InactiveTitleText)}
         
@@ -102,6 +103,13 @@
             font-weight: var(--CaptionFont-bold);
             font-style: var(--CaptionFont-italic);
             // color: var(--CaptionFont-bold);
+        }
+
+        [role="menubar"] > [role="menuitem"] {
+            font-family: var(--MenuFont-name);
+            font-weight: var(--MenuFont-bold);
+            font-style: var(--MenuFont-italic);
+            color: var(--MenuText);
         }
     }
 }

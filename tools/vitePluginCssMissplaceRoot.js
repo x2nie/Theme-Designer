@@ -6,7 +6,8 @@ export default function vitePluginCssMissplaceRoot() {
         if (id.endsWith('.css') || id.endsWith('.scss')) {
           //   return code.replace(/\.win7\s+:root\b/g, '.win7');
           // code = code.replace(/(\w+)\s+:not\(\.DMRESET\)\s+:root\b/g, (a,b,c)=> b);
-          code = code.replace(/\.window\s+\.window[\s]*([:\.]*)+/gm, (a,b,c)=> '.window' + b);
+          // code = code.replace(/\.window\s+\.window[\s]*([:\.]*)+/gm, (a,b,c)=> '.window' + b);
+          code = code.replace(/\.window\s+\.window\b([:\.]*)+/gm, (a,b,c)=> '.window' + b);
           code = code.replace(/(\w+)\s+:root\b/gm, (a,b,c)=>{
             // console.log('rep',a,'@2', b, '@3:', c)
             // console.log(id)

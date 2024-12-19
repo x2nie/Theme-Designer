@@ -16,6 +16,7 @@ ul {
     display: flex;
     margin : calc(-1px   * var(--element-spacing));
     margin-bottom: 0;
+    background: var(--menu-bar, var(--surface));
     // background: linear-gradient(
     //   #fff 20%,
     //   #f1f4fa 25%,

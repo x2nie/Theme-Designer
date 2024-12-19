@@ -9,6 +9,8 @@
             <option value="win98">Classic Style</option>
             <option value="winXP">XP Style</option>
             <option value="win7">Win 7 Style</option>
+            <option value="winNT">Win NT Style</option>
+            <option value="win31">Win 31 Style</option>
          </select>
       </div>
    </div>
@@ -17,7 +19,7 @@
    <div> <!-- color scheme -->
       <div class="field-row-stacked" >
          <label for="ed-items">Color Scheme</label>
-         <select id="ed-items" t-model="state.theme">
+         <select id="ed-items" t-model="state.colorScheme">
             <option value="win98">Classic</option>
             <option value="winXP">XP</option>
             <option value="win7">Win 7</option>

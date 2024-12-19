@@ -15,7 +15,7 @@
 
 
 <div t-name="sample_app.inactive" t-attf-class="window {{state.theme}} win70 win980 sample_app" 
-            style0="--dialog-blue:grey; --dialog-blue-light:silver; "
+            style="--element-spacing:0;"
     >
         <div class="title-bar" data-el="InactiveTitle">
             <div class="title-bar-text">Inactive Window</div>
@@ -26,7 +26,11 @@
             </div>
         </div>
         <div class="window-body">
-            <p>There's so much room for activities!</p>
+            <!-- <p>There's so much room for activities!</p> -->
+            <div id="window-and-scrollbar" data-el="MDI" 
+                style="background:var(--AppWorkspace, grey); height:100%">
+                
+            </div>
             
         </div>
 </div>
@@ -76,7 +80,7 @@
 </div>
 
 <ul t-name="sample_app.menu" role="menubar" class="can-hover">
-  <li role="menuitem" tabindex="0" class="no-hover">Normal</li>
+  <li role="menuitem" tabindex="0" class="no-hover" data-el="Menu">Normal</li>
   <li role="menuitem" disabled="disabled" tabindex="0">Disabled</li>
   <li role="menuitem" tabindex="0" class="selected" data-el="Selection">Selected</li>
 </ul>
