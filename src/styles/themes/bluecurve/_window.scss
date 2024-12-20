@@ -169,6 +169,7 @@ button{
             .title-bar-text {
                 position: relative;
                 text-shadow: 1px 1px black;
+                border: 1px solid mix($theme_selected_bg_color, black, 60%);
                 border-top: 1px solid  rgba(lighten($theme_selected_bg_color, 50%), 0.2);
                 border-bottom: 1px solid  darken($theme_selected_bg_color, 90%);
 
@@ -189,7 +190,7 @@ button{
                     background-image: url(img/title-gradient-bottom.png);
                     background-repeat: repeat-x;
                     background-position: bottom;
-                    opacity: 0.5;
+                    opacity: 0.2;
                     z-index: 1;
                 }
                 &::before{
