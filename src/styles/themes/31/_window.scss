@@ -58,10 +58,12 @@ button{
                 display: none;
             }
             &.minimize::after{
-                content: '⯆'
+                // content: '⯆';
+                content: '🞃'; //https://en.wikipedia.org/wiki/Geometric_Shapes_Extended
             }
             &.maximize::after{
-                content: '⯅'
+                // content: '⯅';
+                content: '🞁';
             }
         }
     }

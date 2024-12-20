@@ -11,6 +11,7 @@
             <option value="win7">Win 7 Style</option>
             <option value="winNT">Win NT Style</option>
             <option value="win31">Win 31 Style</option>
+            <option value="bluecurve">Bluecurve</option>
          </select>
       </div>
    </div>

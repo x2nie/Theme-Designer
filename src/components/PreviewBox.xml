@@ -19,6 +19,9 @@
             data-el="CaptionButton"
     >
         <div class="title-bar" data-el="BorderInactive">
+            <div class="title-bar-sys" data-el="CaptionButton">
+                <button class="sys"></button>
+            </div>
             <div class="title-bar-text">Inactive Window</div>
             <div class="title-bar-controls" data-el="CaptionButton">
                 <button class="minimize"></button>
@@ -71,9 +74,12 @@
         style="--element-spacing:0; --0dialog-blue:gold; --0dialog-blue-light:lime; "
     >
         <div class="title-bar" data-el="ActiveTitle">
+            <div class="title-bar-sys" data-el="CaptionButton">
+                <button class="sys"></button>
+            </div>
             <div class="title-bar-text">Message Box</div>
             <div class="title-bar-controls" data-el="CaptionButton">
-            <button aria-label="Close"></button>
+                <button class="close"></button>
             </div>
         </div>
         <div class="window-body" >

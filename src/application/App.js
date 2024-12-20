@@ -27,6 +27,7 @@ import './style.css'
 // import '../styles/themes/nt/_window.scss'
 import '../styles/themes/nt/windowed.scss'
 import '../styles/themes/31/windowed.scss'
+import '../styles/themes/bluecurve/windowed.scss'
 
 
 // import 'xp.css/dist/XP.css'
