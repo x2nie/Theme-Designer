@@ -58,6 +58,16 @@ export const spec = {
         color: 'AppWorkspace',
     },
 
+    BorderActive: {
+        label: 'Active Border',
+        color: 'ActiveBorder',
+    },
+
+    BorderInactive: {
+        label: 'Inactive Border',
+        color: 'InactiveBorder',
+    },
+
     // MENUS:------------- \
 
     Selection: {

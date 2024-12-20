@@ -7,9 +7,9 @@
         <div class="title-bar">
           <div class="title-bar-text">Another window with contents</div>
           <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
-            <button aria-label="Maximize"></button>
-            <button aria-label="Close"></button>
+            <button class="minimize"></button>
+            <button class="maximize"></button>
+            <button class="close"></button>
           </div>
         </div>
 

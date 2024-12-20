@@ -1,3 +1,5 @@
+// https://guidebookgallery.org/screenshots/win31
+
 button{
     // padding: 10px !important;
     background: silver;
@@ -10,14 +12,67 @@ button{
 }
     
 .window {
-    border: 3px solid var(--ActiveBorder);
-    background: var(--Window);
+    border: 3px solid var(--InactiveBorder);
+    background: var(--InactiveBorder);
     // border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22rgb(64%2C%2064%2C%2064)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22rgb(250%2C%20224%2C%20228)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h96v32h-64v64h-32v-96z%22%20fill%3D%22rgb(247%2C%20219%2C%20215)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M160%2064h32v128h-128v-32h96v-96z%22%20fill%3D%22rgb(222%2C%2069%2C%2096)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M96%2096h64v64h-64v-64z%22%20fill%3D%22rgb(244%2C%20193%2C%20202)%22%2F%3E%0A%09%09%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22256%22%20stroke-width%3D%2264%22%20stroke%3D%22rgb(0%2C%200%2C%200)%22%20fill%3D%22none%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 96 / 3px;
     // border: 30px solid;
     // border-image: url(https://interactive-examples.mdn.mozilla.net/media/examples/border-diamonds.png) 30 round;
-    
-    .title-bar {
-        min-height: 17px;
-        background: var(--ActiveTitle);
+    border-image-source: url("./images/win31-window-border.svg");
+    border-image-repeat: stretch;
+    border-image-width: 23px;
+    border-image-slice: 23;
+
+    > * {
+        border: 1px solid var(--WindowFrame);
+        &:not(:first-child){
+            border-top: none;
+        }
     }
+
+    .menubar {
+        min-height: 18px;
+        background: var(--MenuBar);
+    }
+
+    .title-bar {
+        min-height: 18px;
+        border-bottom: 1px solid var(--WindowFrame);
+        background: var(--InactiveTitle);
+        color: var(--InactiveTitleText);
+        text-align: center;
+        
+        button {
+            min-height: 18px;
+            min-width: 18px;
+            margin: 0 -1px -1px 1px;
+            position: relative;
+
+            &::after{
+                position: absolute;
+                inset: 0;
+                vertical-align: middle;
+                font-size: xx-small;
+            }
+            
+            &.close{
+                display: none;
+            }
+            &.minimize::after{
+                content: '⯆'
+            }
+            &.maximize::after{
+                content: '⯅'
+            }
+        }
+    }
+
+    &.active{
+        background: var(--ActiveBorder);
+        
+        .title-bar {
+            background: var(--ActiveTitle);
+            color: var(--TitleText);
+        }
+    }
+    
 }

@@ -2,9 +2,9 @@
     // @import "./7.css.modified/gui/index.scss";
     // @import "./index.scss";
     // @import "../base/index.scss";
-    // @import "../base/index";
     @import "variables";
-    @import "../base/window";
+    @import "../base/index";
+    // @import "../base/window";
     @import "window";
 
     // background: var(--surface);

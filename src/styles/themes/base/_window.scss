@@ -3,11 +3,11 @@
 }
 
 [role=menubar], .menu-bar {
-    background: red;
+    // background: red;
     display: flex;
 }
 ul[role=menubar], ul.menu-bar {
-    background: yellow;
+    // background: yellow;
     margin: 0;
     padding-left: 0;
     list-style: none;
@@ -26,7 +26,7 @@ ul[role=menubar], ul.menu-bar {
 .title-bar-text {
     flex-grow: 1;
     font-weight: --var(--CaptionFont-bold, bold);
-    color: var(--TitleText);
+    // color: var(--TitleText);
 }
 
 .title-bar-controls {
