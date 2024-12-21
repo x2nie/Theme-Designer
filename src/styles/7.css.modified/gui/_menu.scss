@@ -3,13 +3,15 @@
   --item-offset-left: 30px;
 }
 
-ul {
+
+.window > ul {
   &[role] {
     margin: 0;
     padding: 0;
     list-style: none;
     cursor: default;
   }
+
 
   &.menubar, &[role="menubar"] {
     display: flex;
@@ -20,10 +22,14 @@ ul {
       #d4dbee 48%,
       #e6eaf6
     );
+    border: var(--window-border) var(--window-border-color);
+    border-bottom: none;
+    box-shadow: 0 0 0 1px #fff9;
 
     > [role="menuitem"] {
       position: relative;
       padding: 6px 10px;
+      line-height: 1em;
 
       &:focus,
       &:focus-within,
@@ -228,4 +234,11 @@ ul {
       }
     }
   }
+}
+
+.window > ul.menubar, 
+.window > ul[role="menubar"] {
+  margin: 0 var(--window-spacing);
+  // background: red !important;
+  // box-shadow: inset 2px 2px red !important;
 }

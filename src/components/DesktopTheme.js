@@ -1,4 +1,4 @@
-import { Component, useEffect, useState } from "@odoo/owl";
+import { Component, onMounted, useEffect, useRef, useState } from "@odoo/owl";
 import { FieldColor } from "./FieldColor";
 import { FieldSpin } from "./FieldSpin";
 import { spec, win95_colors } from "./spec";
@@ -22,6 +22,8 @@ export class DesktopTheme extends Component{
             mapping: spec.Desktop,
             fullCss : this.windowStyle(),
         })
+        const scroll10px = useRef('scroll10px')
+        onMounted(() => scroll10px.el.scrollTop = 10);
         useEffect(
             //? if user click any of colors or sizes, apply to data-then-CSS!
             ()=>{
@@ -42,6 +44,13 @@ export class DesktopTheme extends Component{
     toggleItalic(){
         this.state.font.italic = !this.state.font.italic;
     }
+    getLongText(){
+        let txt = 'Text'
+        for (let i = 0; i < 10; i++) {
+            txt += '\n'
+        }
+        return txt
+    }
 
     windowStyle(){
         //? generate css for html
@@ -58,16 +67,16 @@ export class DesktopTheme extends Component{
                 for(let [p, yn] of Object.entries(v)){
                     switch (p) {
                         case 'bold':
-                            ret += `--${k}-${p}: ${yn?'bold':100};\n`;
+                            ret += `--${k}-${p}: ${yn?'bold':100} !important;\n`;
                             break;
                         case 'italic':
-                            ret += `--${k}-${p}: ${yn?'italic':'normal'};\n`;
+                            ret += `--${k}-${p}: ${yn?'italic':'normal'} !important;\n`;
                             break;
                         // case 'name':
                         //     break;
                             
                         default:
-                            ret += `--${k}-${p}: ${yn};\n`;
+                            ret += `--${k}-${p}: ${yn} !important;\n`;
                             break;
                     }
                 }

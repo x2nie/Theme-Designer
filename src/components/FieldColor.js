@@ -4,7 +4,7 @@ import './FieldColor.scss'
 
 export class FieldColor extends Component {
     // static template = xml`<button class="btn-color" t-on-click="btnClick"><input type="color" t-model="props.model" t-att-style="style" t-ref="input"/></button>`
-    static template = xml`<button class="btn-color" t-on-click="btnClick" t-att="{disabled: props.disabled}"><i t-attf-style="background:{{props.color}};"/><s/><t t-slot="default"/></button>`
+    static template = xml`<button class="btn-color" t-on-click="btnClick" t-att="{disabled: props.disabled}"><i t-attf-style="background:{{props.color}};"/><s/><b/><t t-slot="default"/></button>`
 
     setup(){
         this.input = useRef("input")

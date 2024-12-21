@@ -2,8 +2,8 @@
 
 <div t-name="theme_preview" class="DMRESET preview-box" 
     data-el="Desktop"
-    t-att-style="state.fullCss"
     t-on-click="previewClick" >
+    <!-- t-att-style="state.fullCss" -->
     
     <t t-call="sample_app.inactive"/>
     <t t-call="sample_app.active"/>
@@ -15,7 +15,7 @@
 
 
 <div t-name="sample_app.inactive" t-attf-class="window {{state.theme}} win70 win980 sample_app" 
-            style="--element-spacing:0;"
+             t-att-style="state.fullCss"
             data-el="CaptionButton"
     >
         <div class="title-bar" data-el="BorderInactive">
@@ -32,7 +32,7 @@
         <div class="window-body">
             <!-- <p>There's so much room for activities!</p> -->
             <div id="window-and-scrollbar" data-el="MDI" 
-                style="background:var(--AppWorkspace, grey); height:100%">
+                style="background:var(--AppWorkspace, grey);">
                 
             </div>
             
@@ -41,7 +41,7 @@
 
 
 <div t-name="sample_app.active" t-attf-class="window {{state.theme}} win70 win980 active sample_app" 
-            style="--element-spacing:0; --0dialog-blue:gold; --0dialog-blue-light:lime; "
+             t-att-style="state.fullCss"
             data-el="BorderActive"
     >
         <div class="title-bar" data-el="ActiveTitle">
@@ -59,10 +59,11 @@
         <div class="window-body">
             <!-- <p>There's so much room for activities!</p> -->
             <div id="window-and-scrollbar" data-el="Scrollbar">
-                <div>
+                <div class="has-scrollbar" t-ref="scroll10px">
                     <textarea data-el="Input" 
                         style="box-shadow:none; border:none;"
-                        rows="6" readonly="readonly">Window Text</textarea>
+                        rows="4" readonly="readonly">Text</textarea>
+                        <!-- t-out="getLongText()" -->
                 </div>
             </div>
             
@@ -71,7 +72,7 @@
 
 <div t-name="sample_app.message-box" t-attf-class="window {{state.theme}} win70 win980 active message-box" 
         data-el="Form"
-        style="--element-spacing:0; --0dialog-blue:gold; --0dialog-blue-light:lime; "
+         t-att-style="state.fullCss"
     >
         <div class="title-bar" data-el="ActiveTitle">
             <div class="title-bar-sys" data-el="CaptionButton">

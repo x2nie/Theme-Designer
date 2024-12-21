@@ -302,14 +302,14 @@
       }
 
       &[aria-label="Minimize"],
-      &.is-minimize {
+      &.minimize {
         &::before {
           background: url("./icon/minimize.png") no-repeat center 10px;
         }
       }
 
       &[aria-label="Maximize"],
-      &.is-maximize {
+      &.maximize {
         &::before {
           background: url("./icon/maximize.png") no-repeat center;
         }
@@ -330,7 +330,7 @@
       }
 
       &[aria-label="Close"],
-      &.is-close {
+      &.close {
         min-width: 48px;
 
         &::before {
@@ -395,7 +395,7 @@
         }
 
         &[aria-label="Minimize"],
-        &.is-minimize {
+        &.minimize {
           background: url("./icon/minimize.png") no-repeat center 10px,
             var(--control-background);
           &::before {
@@ -421,7 +421,7 @@
         }
 
         &[aria-label="Maximize"],
-        &.is-maximize {
+        &.maximize {
           background: url("./icon/maximize.png") no-repeat center,
             var(--control-background);
           &::before {
@@ -496,7 +496,7 @@
         }
 
         &[aria-label="Close"],
-        &.is-close {
+        &.close {
           background: url("./icon/close.png") no-repeat center,
             var(--control-background), var(--control-background-close);
           box-shadow: var(--control-inset-shadow);
@@ -525,7 +525,7 @@
 
         &:disabled {
           &[aria-label="Maximize"],
-          &.is-maximize {
+          &.maximize {
             background: var(--control-background);
 
             &::before {

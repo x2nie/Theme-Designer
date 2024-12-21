@@ -15,6 +15,7 @@
 
         <div class="neck">
           <t t-call="theme_preview"/>
+          <!-- <t t-call="iframe_preview"/> -->
           <!-- <t t-call="Editors"/> -->
         </div>
 
@@ -144,5 +145,7 @@
               allowfullscreen="true"></iframe> -->
           </article>
 </t>          
+
+<iframe t-name="iframe_preview" src="preview-box.html"></iframe>
 
 </templates>

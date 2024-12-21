@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body><div id="app"></div>
+    <script type="module" src="/src/application/loader.js"></script>
+    Hello IFRAME
+    <script>
+        // Membuat elemen <link> untuk menambahkan file CSS ke <head>
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/assets/bar.abcdef123456.css'; // Gantilah dengan path yang benar sesuai dengan hasil build Vite
+
+        // Menambahkan elemen <link> ke dalam <head>
+        document.head.appendChild(link);
+    </script>
+
+    <div class="window active" style="max-width: 300px">
+        <div class="title-bar">
+          <div class="title-bar-text">A window with contents</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="window-body has-space">
+          <p>There's so much room for activities!</p>
+        </div>
+      </div>
+  </body>
+</html>

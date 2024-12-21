@@ -68,6 +68,10 @@ export const spec = {
         color: 'InactiveBorder',
     },
 
+    Scrollbar: {
+        label: 'Scroll Bar'
+    },
+
     // MENUS:------------- \
 
     Selection: {

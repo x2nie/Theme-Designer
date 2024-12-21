@@ -4,8 +4,11 @@
  * https://github.com/khang-nd/7.css/blob/main/LICENSE
  */
 
+ @import "../../themes/base/index";
+
  @import "_variables.scss";
 // >.window-body *:not(.DMRESET){
+@import "_menu.scss";
 >.window-body {
 @import "_global.scss";
 @import "_balloon.scss";
@@ -19,7 +22,6 @@
 @import "_groupbox.scss";
 @import "_listbox.scss";
 @import "_listview.scss";
-@import "_menu.scss";
 @import "_progressbar.scss";
 @import "_radiobutton.scss";
 @import "_scrollbar.scss";
