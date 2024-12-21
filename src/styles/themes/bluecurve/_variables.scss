@@ -18,11 +18,14 @@ $link_color: #0000ee;
 $link_visited_color: #551a8b;
 
 $light-normal: white;
+$dark-normal: silver;
 
+$ButtonFace: $theme_bg_color;
 $ActiveTitle : $theme_selected_bg_color;
 $ActiveBorder : #c0c0c0;
-$InactiveTitle : transparent;
-$InactiveTitleText : black;
+$InactiveTitle : $insensitive_bg_color;
+$InactiveTitleText : $insensitive_fg_color;
 $InactiveBorder : #c0c0c0;
-$MenuBar: white;
+$MenuBar: $theme_bg_color;
+$foo:bar;
 

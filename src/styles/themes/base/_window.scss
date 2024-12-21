@@ -1,5 +1,11 @@
 .window {
     font-size: 11px;
+    display: flex;
+    flex-direction: column;
+
+    .window-body{
+        flex-grow: 1;
+    }
 }
 
 [role=menubar], .menu-bar {

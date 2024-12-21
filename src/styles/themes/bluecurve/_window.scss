@@ -1,18 +1,20 @@
 // https://guidebookgallery.org/screenshots/win31
+.window > .window-body{
 
-button{
-    // padding: 10px !important;
-    background: #eef2fa;
-    border: 3px solid blue;
-    border-image-source: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9"><path fill="%23ccc" d="M1,1H7V7H1Z"/><path fill="%23fff" d="M0,0V8H1V1H8V0H0Z"/><path fill="%23888" d="M7,1V7H1V8H8V1H7Z"/><path fill="%23000" d="M8,0V8H0v1h9V8V0H8Z"/></svg>');
-    // border-image-source: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%229px%22%20height%3D%229px%22%20viewBox%3D%220%200%209%209%22%3E%3Cpath%20fill%3D%22%23ccc%22%20d%3D%22M1,1H7V7H1Z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M0,0V8H1V1H8V0H0Z%22%2F%3E%3Cpath%20fill%3D%22%23888%22%20d%3D%22M7,1V7H1V8H8V1H7Z%22%2F%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M8,0V8H0v1h9V8V0H8Z%22%2F%3E%3C%2Fsvg%3E");
-    border-image-slice: 3;
-    border-image-width: 1;
-    border-image-outset: 0;
+    button{
+        // padding: 10px !important;
+        background: #eef2fa;
+        border: 3px solid blue;
+        border-image-source: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9"><path fill="%23ccc" d="M1,1H7V7H1Z"/><path fill="%23fff" d="M0,0V8H1V1H8V0H0Z"/><path fill="%23888" d="M7,1V7H1V8H8V1H7Z"/><path fill="%23000" d="M8,0V8H0v1h9V8V0H8Z"/></svg>');
+        // border-image-source: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%229px%22%20height%3D%229px%22%20viewBox%3D%220%200%209%209%22%3E%3Cpath%20fill%3D%22%23ccc%22%20d%3D%22M1,1H7V7H1Z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M0,0V8H1V1H8V0H0Z%22%2F%3E%3Cpath%20fill%3D%22%23888%22%20d%3D%22M7,1V7H1V8H8V1H7Z%22%2F%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M8,0V8H0v1h9V8V0H8Z%22%2F%3E%3C%2Fsvg%3E");
+        border-image-slice: 3;
+        border-image-width: 1;
+        border-image-outset: 0;
+    }
 }
     
 .window {
-    $borderWidth: 5px;
+    $borderWidth: 4px;
     border: $borderWidth solid var(--InactiveBorder);
     border-top-width:1px;
     // background: var(--InactiveBorder);
@@ -34,6 +36,7 @@ button{
 
     .menubar {
         min-height: 18px;
+        margin: 0 -2px;
         background: var(--MenuBar);
     }
 
@@ -73,10 +76,13 @@ button{
             width: 18px;
             // background: #ff00ff40;
             border: 1px solid #888ea1;
+            border: 1px solid mix($theme_selected_bg_color, $dark-normal, 30%);
             border-radius: 4px;
             // margin: 0 -1px -1px 1px;
+            box-shadow: inset 1px 1px white, inset -1px -1px mix($theme_selected_bg_color, $theme_bg_color, 15%);
             // position: relative;
             // background-size: 9px 9px;
+            background-color: var(--ButtonFace);
             background-repeat: no-repeat;
             background-position: center;
 
@@ -105,8 +111,8 @@ button{
         .title-bar-controls, .title-bar-sys{
             display: flex;
             align-items: center;
-            padding: 0 4px;
-            gap: 4px;
+            padding: 0 3px;
+            gap: 3px;
         }
         .title-bar-controls{
             border-top-right-radius: inherit;
@@ -120,6 +126,11 @@ button{
                 // background-position: center;
             }
         }
+    }
+
+    .window-body{
+        margin: 0 2px 2px;
+        background: var(--ButtonFace);
     }
 
     &.active{

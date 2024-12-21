@@ -17,7 +17,7 @@ import './style.css'
 
 //? 3 LINES BELOW ARE FINE -------------
 // import '../styles/themes/98/windowed.scss'
-// import '../styles/themes/XP/windowed.scss'
+import '../styles/themes/XP/windowed.scss'
 // import '../styles/7.css.modified/gui/windowed.scss'
 
 //? REBUILD FROM SCRATCH
