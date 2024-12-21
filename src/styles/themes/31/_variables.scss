@@ -4,3 +4,7 @@ $InactiveTitle : white;
 $InactiveTitleText : black;
 $InactiveBorder : #c0c0c0;
 $MenuBar: white;
+
+//? Switch visibility between close button (right)  vs sysmenu (left)
+$display-close-button: none;
+$display-sys-button: block;

@@ -29,10 +29,20 @@ ul[role=menubar], ul.menu-bar {
     align-items: center;
 }
 
+.title-bar-sys {
+    button {
+        display: $display-sys-button;
+    }
+}
+
 .title-bar-text {
     flex-grow: 1;
     font-weight: --var(--CaptionFont-bold, bold);
     // color: var(--TitleText);
+    text-overflow: ellipsis;
+    text-wrap-mode: nowrap;
+    flex-shrink: 1;
+    overflow: hidden;
 }
 
 .title-bar-controls {
@@ -43,5 +53,8 @@ ul[role=menubar], ul.menu-bar {
         &:focus {
             outline: none;
         }
+    }
+    button.close {
+        display: $display-close-button;
     }
 }
