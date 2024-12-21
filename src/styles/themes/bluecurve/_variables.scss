@@ -29,3 +29,6 @@ $InactiveBorder : #c0c0c0;
 $MenuBar: $theme_bg_color;
 $foo:bar;
 
+//? Switch visibility between close button (right)  vs sysmenu (left)
+// $display-close-button: none;
+$display-sys-button: block;

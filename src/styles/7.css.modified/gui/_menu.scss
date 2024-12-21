@@ -11,7 +11,7 @@ ul {
     cursor: default;
   }
 
-  &[role="menubar"] {
+  &.menubar, &[role="menubar"] {
     display: flex;
     background: linear-gradient(
       #fff 20%,
