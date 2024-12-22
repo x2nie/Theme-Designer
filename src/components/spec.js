@@ -137,6 +137,15 @@ export const win95_colors = {
     MenuFont: {name: 'monospace'},
     StatusFont: {name: 'monospace'},
 
+
+    HorzSpacing: 43,
+    VertSpacing: 43,
+    TitleWrap: 1,
+    'IconFont-Height': 8,
+    'IconFont-Weight': 400,
+    // 'IconFont-Italic': normal,
+    'IconFont-Name': 'Tahoma',
+
     ActiveBorder: 'rgb(192 192 192)',
     ActiveTitle: 'rgb(0 0 128)',
     AppWorkspace: 'rgb(128 128 128)',

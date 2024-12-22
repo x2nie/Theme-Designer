@@ -1,5 +1,5 @@
 import { Component, loadFile, onMounted, onWillStart, useEffect, useRef, useState } from "@odoo/owl";
-import { parseIniFile, parseNonclientMetrics } from "./iniFileParser";
+import { parseIconMetrics, parseIniFile, parseNonclientMetrics } from "./iniFileParser";
 import { FieldColor } from "./FieldColor";
 import { FieldSpin } from "./FieldSpin";
 import { spec, win95_colors } from "./spec";
@@ -7,6 +7,7 @@ import { spec, win95_colors } from "./spec";
 import './DesktopTheme.scss'
 import './PreviewBox.scss'
 import './Editors.scss'
+import './DesktopIcon.scss'
 
 export class DesktopTheme extends Component{
     static template = "DesktopTheme.Form"
@@ -119,8 +120,12 @@ export class DesktopTheme extends Component{
             // NonclientMetrics.CaptionHeight = 65; //demo
             console.log(NonclientMetrics)
             Object.assign(this.data, NonclientMetrics)
+            
+            //? Desktop Icon
+            debugger
+            const IconMetrics = parseIconMetrics(Metrics['IconMetrics'], true)
+            Object.assign(this.data, IconMetrics)
         }
-
             
         
         this.state.fullCss = this.windowStyle()
