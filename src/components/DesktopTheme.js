@@ -12,7 +12,8 @@ export class DesktopTheme extends Component{
     static template = "DesktopTheme.Form"
     static components = {FieldColor, FieldSpin}
     setup(){
-        this.data = useState(win95_colors);
+        // this.data = useState(win95_colors);
+        this.data = {...win95_colors}; // assure simple
         this.state = useState({
             theme: 'win95',
             item: 'Desktop',
@@ -88,6 +89,7 @@ export class DesktopTheme extends Component{
     }
 
     async applyThemeFile(){
+        this.data = {...win95_colors}; //reset all
         const {theme, color_scheme} = this.state;
         const themeFile = this.colorSchemesIni[theme][color_scheme]
         const schemeRoot = `/src/styles/themes/${theme}/color-scheme/`;
@@ -112,8 +114,12 @@ export class DesktopTheme extends Component{
 
         //? fonts & sizes
         const Metrics = ini['Metrics']
-        const NonclientMetrics = parseNonclientMetrics(Metrics['NonclientMetrics'], true);
-        console.log(NonclientMetrics)
+        if(Metrics){
+            const NonclientMetrics = parseNonclientMetrics(Metrics['NonclientMetrics'], true);
+            // NonclientMetrics.CaptionHeight = 65; //demo
+            console.log(NonclientMetrics)
+            Object.assign(this.data, NonclientMetrics)
+        }
 
             
         
@@ -126,8 +132,8 @@ export class DesktopTheme extends Component{
         //? generate css for html
         let ret = '\n'
         for(const [k,v] of Object.entries(this.data)){
-            if(v && v.name){
-                //? it is Font struct
+            //? it is Font struct
+            if(v && typeof v == 'object'){
                 // for(const n of ['name', 'color', 'color2', 'text']){
                 //     const key = scoop[n]
                 //     if(key != null){
@@ -136,24 +142,38 @@ export class DesktopTheme extends Component{
                 // }
                 for(let [p, yn] of Object.entries(v)){
                     switch (p) {
-                        case 'bold':
-                            ret += `--${k}-${p}: ${yn?'bold':100} !important;\n`;
+                        case 'FaceName':
+                        case 'Name':
+                            ret += `--${k}-Name: '${yn}' !important;\n`;
                             break;
-                        case 'italic':
+                        case 'Height':
+                            ret += `--${k}-${p}: ${yn*-1}px !important;\n`;
+                            break;
+                        case 'Weight':
+                            ret += `--${k}-${p}: ${yn} !important;\n`;
+                            break;
+                        case 'Italic':
                             ret += `--${k}-${p}: ${yn?'italic':'normal'} !important;\n`;
                             break;
                         // case 'name':
                         //     break;
                             
-                        default:
-                            ret += `--${k}-${p}: ${yn} !important;\n`;
-                            break;
+                        // default:
+                        //     ret += `--${k}-${p}: ${yn} !important;\n`;
+                        //     break;
                     }
                 }
-            } else {
+            }
+            //? size
+            else if (!isNaN(v)) {
+                ret += `--${k}: ${v}px;\n`;
+            }
+            //? color
+            else {
                 ret += `--${k}: ${v|| 'none'};\n`;
             }
         }
+        ret += `--iCaptionHeight: ${this.data.CaptionHeight};\n` ; //without px
         return ret;
     }
 

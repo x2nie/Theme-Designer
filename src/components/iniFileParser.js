@@ -78,7 +78,8 @@ export function parseNonclientMetrics(byteArray, parseAsString=false){
             ClipPrecision: view.getUint8(offset + 25),
             Quality: view.getUint8(offset + 26),
             PitchAndFamily: view.getUint8(offset + 27),
-            FaceName: new TextDecoder().decode(new Uint8Array(byteArray.slice(offset + 28, offset + 60))).replace(/\0.*$/, "") // Hapus null terminator
+            // FaceName: new TextDecoder().decode(new Uint8Array(byteArray.slice(offset + 28, offset + 60))).replace(/\0.*$/, "") // Hapus null terminator
+            Name: new TextDecoder().decode(new Uint8Array(byteArray.slice(offset + 28, offset + 60))).replace(/\0.*$/, "") // Hapus null terminator
         };
     }
   

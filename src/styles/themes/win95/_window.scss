@@ -17,12 +17,13 @@
 }
 .window {
     background: var(--ButtonFace);
+    background: var(--ActiveBorder);
     color: var(--ButtonText);
     box-shadow: var(--border-window-outer), var(--border-window-inner);
-    padding:3px;
+    padding: calc(3px + var(--BorderWidth));
 
     .title-bar {
-        min-height: 18px;
+        min-height: var(--CaptionHeight, 18px);
         background: linear-gradient(to right, var(--ActiveTitle), var(--GradientActiveTitle));
         color:var(--TitleText);
         .title-bar-text{
@@ -41,17 +42,20 @@
             position: relative;
             padding: 0;
             display: block;
-            min-width: 16px;
-            min-height: 14px;
+            min-width: calc(var(--CaptionHeight, 18px) - 2px); // 16px;
+            min-height: calc(var(--CaptionHeight, 18px) - 4px); // 14px;
             --sprite-image: url("img/titlebar-buttons.png");
             --sprite-y: 0;
             image-rendering: pixelated;
+            
 
             &::before,
             &::after {
+                margin: 0 auto;
                 content: "";
                 display: block;
-                position: absolute;
+                // position: absolute;
+                // inset: 3px 2px;
                 left: 2px;
                 top: 2px;
                 // right: 0;
@@ -63,6 +67,12 @@
                 -webkit-mask-image: var(--sprite-image);
                 -webkit-mask-position: var(--sprite-x) var(--sprite-y);
                 background-color: var(--ButtonText);
+
+                // --scaled: calc(var(--CaptionHeight) / 18);
+                // --big: 30;
+                // --scaled: calc(var(--big) / 18);
+                transform: scale( calc( var(--iCaptionHeight) / 18));
+                // transform: scale(var(--scaled));
             }
             &:enabled.pressing::before,
             &:enabled:hover:active::before{
@@ -107,15 +117,24 @@
         min-height: 15px;
     }
     .title-bar-controls {
-        button.close{
-            min-width: 11px;
-            min-height: 11px;
-            --sprite-x: 7px;
-            &::before,
-            &::after {
-                width: 7px;
-	            height: 7px;
-            }
-        }
+        --CaptionHeight: var(--SmCaptionHeight); //reset, dont use normal window height
+        --iCaptionHeight: var(--SmCaptionHeight); //reset, dont use normal window height
+        // button {
+        //     // position: relative;
+        //     // padding: 0;
+        //     // display: block;
+        //     min-width: calc(var(--CaptionHeight, 18px) - 2px); // 16px;
+        //     min-height: calc(var(--CaptionHeight, 18px) - 4px); // 14px;
+        // }
+        // button.close{
+        //     min-width: 11px;
+        //     min-height: 11px;
+        //     --sprite-x: 7px;
+        //     &::before,
+        //     &::after {
+        //         width: 7px;
+	    //         height: 7px;
+        //     }
+        // }
     }
 }

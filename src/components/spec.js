@@ -131,9 +131,9 @@ export const win95_colors = {
     MenuHeight: 18, //menubar.height
     MenuWidth: 18,  //popup.min-width?
 
-    CaptionFont: {name: 'sans-serif', bold:true, italic:true},
-    SmCaptionFont: {name: 'sans-serif', bold:true, italic:true},
-    MessageFont: {name: 'monospace', italic:true},
+    CaptionFont: {name: 'sans-serif', Weight:700, Italic:true},
+    SmCaptionFont: {name: 'sans-serif', Weight:700, Italic:true},
+    MessageFont: {name: 'monospace', Italic:true},
     MenuFont: {name: 'monospace'},
     StatusFont: {name: 'monospace'},
 
