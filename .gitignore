@@ -34,3 +34,4 @@ public/owl_templates.xml
 *.wav
 *.pal
 *.PAL
+**/MS\ PLUS*/

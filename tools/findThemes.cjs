@@ -19,7 +19,8 @@ function findThemeFiles(dir) {
     
     // Loop untuk memeriksa setiap file
     files.forEach(file => {
-      if (file.endsWith('.theme') || file.endsWith('.Theme') ) {
+      // if (file.endsWith('.theme') || file.endsWith('.Theme') ) {
+      if (file.toLowerCase().endsWith('.theme')) {  // Cek ekstensi tanpa memedulikan kapitalisasi
         themeFiles.push(file);  // Simpan nama file .theme
       }
     });
@@ -45,9 +46,19 @@ function processFolders(rootDir) {
       
       // Jika ditemukan, masukkan ke dalam hasil
       if (themeFiles.length > 0) {
+
+        
         // result.push(...themeFiles);
         result.push(`[${folder}]`);  // Tambahkan nama folder sebagai header
-        result.push(themeFiles.join('\n'));  // Tambahkan daftar file .theme
+
+        // result.push(themeFiles.join('\n'));  // Tambahkan daftar file .theme
+        // Tambahkan nama file tanpa ekstensi sebagai key, dan file lengkap sebagai value
+        themeFiles.forEach(file => {
+          // const nameWithoutExt = path.basename(file, '.theme');  // Mengambil nama tanpa ekstensi
+          const nameWithoutExt = path.basename(file, path.extname(file));  // Mengambil nama tanpa ekstensi
+          result.push(`${nameWithoutExt} = ${file}`);  // Format key = full file name
+        });
+
         result.push('');  // Tambahkan baris kosong setelah setiap section
       }
     }

@@ -22,6 +22,7 @@ export class DesktopTheme extends Component{
             color2: 'fuchsia',
             mapping: spec.Desktop,
             fullCss : this.windowStyle(),
+            color_schemes : [],
         })
 
         onWillStart(async () => {
@@ -38,6 +39,16 @@ export class DesktopTheme extends Component{
                 this.applyChanges()
             },
             () => [this.state.size, this.state.color, this.state.color2, this.state.text, JSON.stringify(this.state.font)]
+        )
+
+        //? user change theme, let reload its color scheme
+        useEffect(
+            //? if user click any of colors or sizes, apply to data-then-CSS!
+            (theme_name)=>{
+                this.state.color_schemes = this.colorSchemes[theme_name] || []
+                // this.applyChanges()
+            },
+            () => [this.state.theme]
         )
     }
 

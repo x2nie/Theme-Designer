@@ -26,6 +26,7 @@ import '../styles/7.css.modified/gui/windowed.scss'
 // import '../styles/themes/basic/windowed.scss'
 // import '../styles/themes/nt/_window.scss'
 import '../styles/themes/nt/windowed.scss'
+import '../styles/themes/win95/windowed.scss'
 import '../styles/themes/31/windowed.scss'
 import '../styles/themes/bluecurve/windowed.scss'
 
