@@ -90,21 +90,29 @@ export class DesktopTheme extends Component{
     async applyThemeFile(){
         const {theme, color_scheme} = this.state;
         const themeFile = this.colorSchemesIni[theme][color_scheme]
-        const themePath = `/src/styles/themes/${theme}/color-scheme/${themeFile}`;
-        const content = await loadFile(themePath);
+        const schemeRoot = `/src/styles/themes/${theme}/color-scheme/`;
+        const content = await loadFile(schemeRoot+ themeFile);
         const ini = parseIniFile(content)
         const colors = ini["Control Panel\\Colors"]
         for (let [key, value] of Object.entries(colors)) {
             value = isNaN(parseInt(value)) ? value : `rgb(${value})`
             this.data[key] = value;
-            console.log(`${key}: ${value}`);
+            // console.log(`${key}: ${value}`);
         }
-        setTimeout(() => {
+
+        //? wallpaper
+        const desktop = ini['Control Panel\\Desktop']
+        if(desktop && desktop['Wallpaper']){
+            let wallpaper = desktop['Wallpaper'].replace(/\\/g, '/');
+            wallpaper = wallpaper.slice(wallpaper.indexOf('Themes') + 7 ).trim('/')
+            this.data['wallpaper'] = `url("${schemeRoot}/${wallpaper}")`
+        } else {
+            this.data['wallpaper'] = undefined; //delete
+        }
             
-            this.state.fullCss = this.windowStyle()
-        }, 100);
-          
-        console.log(colors)
+        
+        this.state.fullCss = this.windowStyle()
+        // console.log(colors)
 
     }
 
@@ -112,7 +120,7 @@ export class DesktopTheme extends Component{
         //? generate css for html
         let ret = '\n'
         for(const [k,v] of Object.entries(this.data)){
-            if(v.name){
+            if(v && v.name){
                 //? it is Font struct
                 // for(const n of ['name', 'color', 'color2', 'text']){
                 //     const key = scoop[n]
@@ -137,7 +145,7 @@ export class DesktopTheme extends Component{
                     }
                 }
             } else {
-                ret += `--${k}: ${v};\n`;
+                ret += `--${k}: ${v|| 'none'};\n`;
             }
         }
         return ret;

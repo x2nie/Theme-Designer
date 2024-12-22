@@ -1,0 +1,37 @@
+[Theme]
+url=https://www.deviantart.com/tpenguinltg/art/Vista-esque-Midnight-Green-563591910
+
+
+[Control Panel\Colors]
+ActiveBorder=32 32 32
+ActiveTitle=18 91 30
+AppWorkspace=21 21 21
+Background=15 45 30
+ButtonAlternateFace=192 192 192
+ButtonDkShadow=0 0 0
+ButtonFace=32 32 32
+ButtonHilight=128 128 128
+ButtonLight=32 32 32
+ButtonShadow=21 21 21
+ButtonText=255 255 255
+GradientActiveTitle=100 168 60
+GradientInactiveTitle=18 91 30
+GrayText=32 32 32
+; Hilight=1 124 224 ; 1 113 216
+Hilight=32 128 44
+HilightText=255 255 255
+HotTrackingColor=64 180 64
+InactiveBorder=32 32 32
+InactiveTitle=18 91 30
+InactiveTitleText=192 192 192
+InfoText=255 255 255
+InfoWindow=0 30 0
+Menu=32 32 32
+MenuBar=32 32 32
+MenuHilight=32 128 44
+MenuText=255 255 255
+Scrollbar=128 128 128
+TitleText=255 255 255
+Window=0 0 0
+WindowFrame=0 0 0
+WindowText=255 255 255

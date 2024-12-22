@@ -1,6 +1,7 @@
 <templates>
 
 <div t-name="theme_preview" class="DMRESET preview-box" 
+    t-att-style="state.fullCss"
     data-el="Desktop"
     t-on-click="previewClick" >
     <!-- t-att-style="state.fullCss" -->

@@ -43,7 +43,7 @@ ul[role=menubar], ul.menu-bar {
 
 .title-bar-text {
     flex-grow: 1;
-    font-weight: --var(--CaptionFont-bold, bold);
+    font-weight: var(--CaptionFont-bold, bold);
     // color: var(--TitleText);
     text-overflow: ellipsis;
     text-wrap-mode: nowrap;
