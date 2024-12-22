@@ -22,7 +22,7 @@
     padding:3px;
 
     .title-bar {
-        min-height: 17px;
+        min-height: 18px;
         background: linear-gradient(to right, var(--ActiveTitle), var(--GradientActiveTitle));
         color:var(--TitleText);
         .title-bar-text{
@@ -97,6 +97,24 @@
 
             &:focus {
                 outline: none;
+            }
+        }
+    }
+}
+
+.window.tool-window{
+    .title-bar{
+        min-height: 15px;
+    }
+    .title-bar-controls {
+        button.close{
+            min-width: 11px;
+            min-height: 11px;
+            --sprite-x: 7px;
+            &::before,
+            &::after {
+                width: 7px;
+	            height: 7px;
             }
         }
     }

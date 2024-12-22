@@ -8,6 +8,7 @@
     
     <t t-call="sample_app.inactive"/>
     <t t-call="sample_app.active"/>
+    <t t-call="sample_app.tool-window"/>
     <t t-call="sample_app.message-box"/>
 
 
@@ -88,6 +89,28 @@
             <!-- <p>There's so much room for activities!</p> -->
             Message Text
             <button data-el="Surface">OK</button>
+            
+        </div>
+</div>
+
+<div t-name="sample_app.tool-window" t-attf-class="window tool-window {{state.theme}} active" 
+        data-el="Form"
+         t-att-style="state.fullCss"
+    >
+        <div class="title-bar" data-el="ActiveTitle">
+            <div class="title-bar-sys" data-el="CaptionButton">
+                <button class="sys"></button>
+            </div>
+            <div class="title-bar-text">Tool</div>
+            <div class="title-bar-controls" data-el="CaptionButton">
+                <button class="close"></button>
+            </div>
+        </div>
+        <div class="window-body" >
+            <!-- <p>There's so much room for activities!</p> -->
+            Icon <br/>
+            Here
+            
             
         </div>
 </div>
