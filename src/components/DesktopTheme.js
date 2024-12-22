@@ -23,15 +23,20 @@ export class DesktopTheme extends Component{
             mapping: spec.Desktop,
             fullCss : this.windowStyle(),
             color_schemes : [],
+            color_scheme : '',
         })
 
+        //? load color schems
         onWillStart(async () => {
             const ini = await loadFile(`/color_schemes.ini`);
-            this.colorSchemes = parseIniFile(ini)
-            console.log(this.colorSchemes)
+            this.colorSchemesIni = parseIniFile(ini)
+            console.log(this.colorSchemesIni)
         })
+
         const scroll10px = useRef('scroll10px')
         onMounted(() => scroll10px.el.scrollTop = 10);
+
+
         useEffect(
             //? if user click any of colors or sizes, apply to data-then-CSS!
             ()=>{
@@ -41,14 +46,27 @@ export class DesktopTheme extends Component{
             () => [this.state.size, this.state.color, this.state.color2, this.state.text, JSON.stringify(this.state.font)]
         )
 
-        //? user change theme, let reload its color scheme
+        //? user change theme, let reload its color schemes list
         useEffect(
-            //? if user click any of colors or sizes, apply to data-then-CSS!
             (theme_name)=>{
-                this.state.color_schemes = this.colorSchemes[theme_name] || []
+                this.state.color_schemes = this.colorSchemesIni[theme_name] || [];
+                this.state.color_scheme = '' //* Default.
                 // this.applyChanges()
             },
             () => [this.state.theme]
+        )
+
+        //? user change color schem, let aplly the colors
+        useEffect(
+            (theme_name)=>{
+                // debugger
+                if(this.state.color_scheme == '') return //* Default.
+                this.state.color_schemes = this.colorSchemesIni[theme_name] || [];
+                // this.applyChanges()
+                this.applyThemeFile()
+                // this.state.fullCss = this.windowStyle()
+            },
+            () => [this.state.color_scheme]
         )
     }
 
@@ -68,6 +86,15 @@ export class DesktopTheme extends Component{
             txt += '\n'
         }
         return txt
+    }
+
+    async applyThemeFile(){
+        const {theme, color_scheme, color_schemes} = this.state;
+        const themeFile = this.colorSchemesIni[theme][color_scheme]
+        const themePath = `/src/styles/themes/${theme}/color-scheme/${themeFile}`;
+        const content = await loadFile(themePath);
+        console.log(content)
+
     }
 
     windowStyle(){

@@ -21,10 +21,10 @@
    <div> <!-- color scheme -->
       <div class="field-row-stacked" >
          <label for="ed-items">Color Scheme</label>
-         <select id="ed-items" t-model="state.colorScheme">
+         <select id="ed-items" t-model="state.color_scheme">
             <option value="">Default</option>
             <option t-foreach="state.color_schemes" t-as="name" t-key="name" 
-               value="name" t-out="name"/>
+               t-att-value="name" t-out="name"/>
          </select>
       </div>
 
