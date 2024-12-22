@@ -16,10 +16,12 @@
     .title-bar {
         min-height: 17px;
         background: linear-gradient(to right, var(--ActiveTitle), var(--GradientActiveTitle));
+        color:var(--TitleText);
     }
     &:not(.active){
         .title-bar{
             background: linear-gradient(to right, var(--InactiveTitle), var(--GradientInactiveTitle));
+            color:var(--InactiveTitleText);
 
         }
     }

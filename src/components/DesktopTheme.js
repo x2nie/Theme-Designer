@@ -14,7 +14,7 @@ export class DesktopTheme extends Component{
     setup(){
         this.data = useState(win95_colors);
         this.state = useState({
-            theme: 'win98',
+            theme: 'win95',
             item: 'Desktop',
             size: 10,
             font: {name:'Arial'},
@@ -61,7 +61,6 @@ export class DesktopTheme extends Component{
             (theme_name)=>{
                 // debugger
                 if(this.state.color_scheme == '') return //* Default.
-                this.state.color_schemes = this.colorSchemesIni[theme_name] || [];
                 // this.applyChanges()
                 this.applyThemeFile()
                 // this.state.fullCss = this.windowStyle()
@@ -89,11 +88,23 @@ export class DesktopTheme extends Component{
     }
 
     async applyThemeFile(){
-        const {theme, color_scheme, color_schemes} = this.state;
+        const {theme, color_scheme} = this.state;
         const themeFile = this.colorSchemesIni[theme][color_scheme]
         const themePath = `/src/styles/themes/${theme}/color-scheme/${themeFile}`;
         const content = await loadFile(themePath);
-        console.log(content)
+        const ini = parseIniFile(content)
+        const colors = ini["Control Panel\\Colors"]
+        for (let [key, value] of Object.entries(colors)) {
+            value = isNaN(parseInt(value)) ? value : `rgb(${value})`
+            this.data[key] = value;
+            console.log(`${key}: ${value}`);
+        }
+        setTimeout(() => {
+            
+            this.state.fullCss = this.windowStyle()
+        }, 100);
+          
+        console.log(colors)
 
     }
 
