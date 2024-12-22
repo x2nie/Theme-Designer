@@ -1,28 +1,103 @@
 .window, button {
     // padding: 10px !important;
-    background: silver;
+    // background: silver;
+//TEMPORARY DISABLE
+    --reason: no-border-image-generator-yet;
+/*
     border: 3px solid blue;
     border-image-source: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9"><path fill="%23ccc" d="M1,1H7V7H1Z"/><path fill="%23fff" d="M0,0V8H1V1H8V0H0Z"/><path fill="%23888" d="M7,1V7H1V8H8V1H7Z"/><path fill="%23000" d="M8,0V8H0v1h9V8V0H8Z"/></svg>');
     // border-image-source: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%229px%22%20height%3D%229px%22%20viewBox%3D%220%200%209%209%22%3E%3Cpath%20fill%3D%22%23ccc%22%20d%3D%22M1,1H7V7H1Z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M0,0V8H1V1H8V0H0Z%22%2F%3E%3Cpath%20fill%3D%22%23888%22%20d%3D%22M7,1V7H1V8H8V1H7Z%22%2F%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M8,0V8H0v1h9V8V0H8Z%22%2F%3E%3C%2Fsvg%3E");
     border-image-slice: 3;
     border-image-width: 1;
     border-image-outset: 0;
-
+*/
     // border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22rgb(64%2C%2064%2C%2064)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22rgb(250%2C%20224%2C%20228)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h96v32h-64v64h-32v-96z%22%20fill%3D%22rgb(247%2C%20219%2C%20215)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M160%2064h32v128h-128v-32h96v-96z%22%20fill%3D%22rgb(222%2C%2069%2C%2096)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M96%2096h64v64h-64v-64z%22%20fill%3D%22rgb(244%2C%20193%2C%20202)%22%2F%3E%0A%09%09%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22256%22%20stroke-width%3D%2264%22%20stroke%3D%22rgb(0%2C%200%2C%200)%22%20fill%3D%22none%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 96 / 3px;
     // border: 30px solid;
     // border-image: url(https://interactive-examples.mdn.mozilla.net/media/examples/border-diamonds.png) 30 round;
 }
 .window {
+    background: var(--ButtonFace);
+    color: var(--ButtonText);
+    box-shadow: var(--border-window-outer), var(--border-window-inner);
+    padding:3px;
+
     .title-bar {
         min-height: 17px;
         background: linear-gradient(to right, var(--ActiveTitle), var(--GradientActiveTitle));
         color:var(--TitleText);
+        .title-bar-text{
+            padding-left: 5px;
+        }
     }
     &:not(.active){
         .title-bar{
             background: linear-gradient(to right, var(--InactiveTitle), var(--GradientInactiveTitle));
             color:var(--InactiveTitleText);
 
+        }
+    }
+    .title-bar-controls {
+        button {
+            position: relative;
+            padding: 0;
+            display: block;
+            min-width: 16px;
+            min-height: 14px;
+            --sprite-image: url("img/titlebar-buttons.png");
+            --sprite-y: 0;
+            image-rendering: pixelated;
+
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 2px;
+                top: 2px;
+                // right: 0;
+                // bottom: 0;
+                width: 12px;
+	            height: 10px;
+                mask-image: var(--sprite-image);
+                mask-position: var(--sprite-x) var(--sprite-y);
+                -webkit-mask-image: var(--sprite-image);
+                -webkit-mask-position: var(--sprite-x) var(--sprite-y);
+                background-color: var(--ButtonText);
+            }
+            &:enabled.pressing::before,
+            &:enabled:hover:active::before{
+                transform: translate(1px,1px);
+            }
+            &:disabled::before {
+                background-color: var(--ButtonHilight);
+                left: 1px;
+                top: 1px;
+            }
+            &:enabled::after {
+                display: none;
+            }
+            &:disabled::after {
+                background-color: var(--GrayText);
+            }
+            
+            &.close{
+                margin-left: 2px;
+                margin-right: 2px;
+                --sprite-x: calc(-3 * 13px - 1px);
+            }
+            &.minimize{
+                --sprite-x: calc(-0 * 13px - 1px);
+            }
+            &.restore{
+                --sprite-x: calc(-2 * 13px - 1px);
+            }
+            &.maximize{
+                --sprite-x: calc(-1 * 13px - 1px);
+            }
+
+            &:focus {
+                outline: none;
+            }
         }
     }
 }
