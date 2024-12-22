@@ -1,5 +1,5 @@
 import { Component, loadFile, onMounted, onWillStart, useEffect, useRef, useState } from "@odoo/owl";
-import { parseIniFile } from "./iniFileParser";
+import { parseIniFile, parseNonclientMetrics } from "./iniFileParser";
 import { FieldColor } from "./FieldColor";
 import { FieldSpin } from "./FieldSpin";
 import { spec, win95_colors } from "./spec";
@@ -109,6 +109,12 @@ export class DesktopTheme extends Component{
         } else {
             this.data['wallpaper'] = undefined; //delete
         }
+
+        //? fonts & sizes
+        const Metrics = ini['Metrics']
+        const NonclientMetrics = parseNonclientMetrics(Metrics['NonclientMetrics'], true);
+        console.log(NonclientMetrics)
+
             
         
         this.state.fullCss = this.windowStyle()

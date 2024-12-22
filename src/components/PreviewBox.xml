@@ -5,6 +5,13 @@
     data-el="Desktop"
     t-on-click="previewClick" >
     <!-- t-att-style="state.fullCss" -->
+
+    <desktop-icons data-el="Icons">
+        <di id="my-computer"  label="My Computer"/>
+        <di id="network"      label="Network Neighborhood"/>
+        <di id="my-documents" label="My Documents"/>
+        <di id="recycle-bin"  label="Recycle Bin"/>
+    </desktop-icons>
     
     <t t-call="sample_app.inactive"/>
     <t t-call="sample_app.active"/>

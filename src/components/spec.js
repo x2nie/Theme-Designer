@@ -120,13 +120,22 @@ export const spec = {
 }
 
 export const win95_colors = {
-    iFooBar: 8, //dummy for dev mode only
-    iCaptionWidth: 12,
-    iMenuHeight: 12, //menubar.height
-    iMenuWidth: 12,  //popup.min-width?
+    // iFooBar: 8, //dummy for dev mode only
+    BorderWidth: 1,
+    ScrollHeight: 13,
+    ScrollWidth: 13,
+    CaptionWidth: 18,
+    CaptionHeight: 18,
+    SmCaptionWidth: 15,
+    SmCaptionHeight: 15,
+    MenuHeight: 18, //menubar.height
+    MenuWidth: 18,  //popup.min-width?
+
     CaptionFont: {name: 'sans-serif', bold:true, italic:true},
+    SmCaptionFont: {name: 'sans-serif', bold:true, italic:true},
     MessageFont: {name: 'monospace', italic:true},
     MenuFont: {name: 'monospace'},
+    StatusFont: {name: 'monospace'},
 
     ActiveBorder: 'rgb(192 192 192)',
     ActiveTitle: 'rgb(0 0 128)',
