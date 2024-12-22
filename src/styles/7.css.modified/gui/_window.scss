@@ -540,6 +540,34 @@
     }
   }
 
+.window.tool-window{
+  --window-border-radius: 0;
+  // border-radius: 0;
+  .title-bar{
+    height: 18px;
+    // padding: var(--window-spacing);
+    // padding-bottom: 0;
+    .title-bar-controls{
+      transform: translateY(3px);
+      border-radius: 2px;
+      border: var(--window-border) var(--control-border-color);
+      
+      button.close{
+        border-radius: 1px;
+        min-width: 20px;
+        background-size: 40%;
+        min-height: 16px;
+        min-width: 16px;
+
+        &::before{
+          border-radius: 1px;
+          // transform: scale(0.8);
+        }
+      }
+    }
+  }
+
+}
 .status-bar {
   margin: var(--window-spacing);
   margin-top: calc(var(--window-spacing) * -1);
