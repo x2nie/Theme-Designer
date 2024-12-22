@@ -113,6 +113,17 @@ export class DesktopTheme extends Component{
             this.data['wallpaper'] = undefined; //delete
         }
 
+
+        //? fonts & sizes
+        const MyComputer = ini['CLSID\\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\DefaultIcon']
+        if(MyComputer && MyComputer.DefaultValue){
+            MyComputer.icon = MyComputer.DefaultValue.replace(/\\/g, '/');
+            MyComputer.icon = MyComputer.icon.slice(MyComputer.icon.indexOf('Themes') + 7 ).trim('/')
+            MyComputer.icon = MyComputer.icon.split(',')[0];
+            this.data['di-my-computer'] = `url("${schemeRoot}/${MyComputer.icon}")`
+
+        }
+
         //? fonts & sizes
         const Metrics = ini['Metrics']
         if(Metrics){
@@ -122,11 +133,10 @@ export class DesktopTheme extends Component{
             Object.assign(this.data, NonclientMetrics)
             
             //? Desktop Icon
-            debugger
             const IconMetrics = parseIconMetrics(Metrics['IconMetrics'], true)
             Object.assign(this.data, IconMetrics)
         }
-            
+
         
         this.state.fullCss = this.windowStyle()
         // console.log(colors)

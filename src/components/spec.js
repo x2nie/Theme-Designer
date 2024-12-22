@@ -139,7 +139,7 @@ export const win95_colors = {
 
 
     HorzSpacing: 43,
-    VertSpacing: 43,
+    VertSpacing: 75,
     TitleWrap: 1,
     'IconFont-Height': 8,
     'IconFont-Weight': 400,

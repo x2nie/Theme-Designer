@@ -40,6 +40,8 @@ desktop-icons{
             padding: 0 2px;
             font-family: Arial;
             font-size: 12px;
+            width: auto;
+            text-wrap: nowrap;
             // font-family: var(--IconFont-Name);
             font-weight: var(--IconFont-Weight);
             background: var(--Background);
