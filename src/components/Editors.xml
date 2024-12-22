@@ -94,7 +94,7 @@
 
       <div class="field-row-stacked" >
          <label for="ed-font-color">Color</label>
-         <div>
+         <div class="button-group" >
          <!-- <input id="ed-font-color" t-model="data.ActiveTitle" type="color"/> -->
          <!-- <FieldColor id="ed-font-color" model="data.ActiveTitle"/> -->
          <FieldColor id="ed-font-color" color="state.text" disabled="!state.mapping.text and !state.mapping.font">

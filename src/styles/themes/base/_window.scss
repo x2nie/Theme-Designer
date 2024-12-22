@@ -3,6 +3,12 @@
     display: flex;
     flex-direction: column;
 
+    .as-div {
+        // used in documentation, like as 98.css, xp.css, 7.css, etc.
+        border: none !important;
+        background: none !important;
+    }
+
     .window-body{
         flex-grow: 1;
     }
