@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "build:xml": "node tools/bundle_xml/main.cjs",
-    "watch:xml": "node tools/bundle_xml/watch_xml_templates.cjs"
+    "watch:xml": "node tools/bundle_xml/watch_xml_templates.cjs",
+    "scantheme": "node tools/findThemes.cjs"
   },
   "devDependencies": {
     "node-watch": "^0.7.4",

@@ -24,3 +24,13 @@ dist-ssr
 *.sw?
 
 public/owl_templates.xml
+
+# OS binaries
+*.scr
+*.dll
+*.so
+
+# temporary disabled
+*.wav
+*.pal
+*.PAL

@@ -1,4 +1,5 @@
-import { Component, onMounted, useEffect, useRef, useState } from "@odoo/owl";
+import { Component, loadFile, onMounted, onWillStart, useEffect, useRef, useState } from "@odoo/owl";
+import { parseIniFile } from "./iniFileParser";
 import { FieldColor } from "./FieldColor";
 import { FieldSpin } from "./FieldSpin";
 import { spec, win95_colors } from "./spec";
@@ -21,6 +22,12 @@ export class DesktopTheme extends Component{
             color2: 'fuchsia',
             mapping: spec.Desktop,
             fullCss : this.windowStyle(),
+        })
+
+        onWillStart(async () => {
+            const ini = await loadFile(`/color_schemes.ini`);
+            this.colorSchemes = parseIniFile(ini)
+            console.log(this.colorSchemes)
         })
         const scroll10px = useRef('scroll10px')
         onMounted(() => scroll10px.el.scrollTop = 10);
