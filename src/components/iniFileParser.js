@@ -1,5 +1,5 @@
 export function parseIniFile(content) {
-    const result = {};
+    const result = {_DefaultIcon};
     let currentSection = null;
 
     // Split by line breaks and iterate over lines
@@ -30,6 +30,17 @@ export function parseIniFile(content) {
     });
 
     return result;
+}
+
+function _DefaultIcon(GUID, key='DefaultIcon'){
+    const MyComputer = this[`CLSID\\{${GUID}}\\DefaultIcon`]
+    if(MyComputer && MyComputer[key]){
+        MyComputer.icon = MyComputer[key].replace(/\\/g, '/');
+        MyComputer.icon = MyComputer.icon.slice(MyComputer.icon.indexOf('Themes') + 7 );//trim().split('/').join('/')
+        MyComputer.icon = MyComputer.icon.split(',')[0];
+        if(MyComputer.icon.endsWith('.dll')) return null;
+        return MyComputer.icon
+    }
 }
 
 export function numbers2bytes(content) {

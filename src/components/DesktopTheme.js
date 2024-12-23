@@ -118,15 +118,22 @@ export class DesktopTheme extends Component{
         }
 
 
-        //? fonts & sizes
+        //? MyComputer
         const MyComputer = ini['CLSID\\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\DefaultIcon']
         if(MyComputer && MyComputer.DefaultValue){
             MyComputer.icon = MyComputer.DefaultValue.replace(/\\/g, '/');
-            MyComputer.icon = MyComputer.icon.slice(MyComputer.icon.indexOf('Themes') + 7 ).trim('/')
+            MyComputer.icon = MyComputer.icon.slice(MyComputer.icon.indexOf('Themes') + 7 );//trim().split('/').join('/')
             MyComputer.icon = MyComputer.icon.split(',')[0];
             this.data['di-my-computer'] = `url("${schemeRoot}/${MyComputer.icon}")`
-
         }
+        const network = ini._DefaultIcon('208D2C60-3AEA-1069-A2D7-08002B30309D')
+        network && (this.data['di-network'] = `url("${schemeRoot}/${network}")`)
+
+        const myDocs = ini._DefaultIcon('450D8FBA-AD25-11D0-98A8-0800361B1103')
+        myDocs && (this.data['di-my-documents'] = `url("${schemeRoot}/${myDocs}")`);
+
+        const recycleBin = ini._DefaultIcon('645FF040-5081-101B-9F08-00AA002F954E', 'full')
+        recycleBin && (this.data['di-recycle-bin'] = `url("${schemeRoot}/${recycleBin}")`);
 
         //? fonts & sizes
         const Metrics = ini['Metrics']
