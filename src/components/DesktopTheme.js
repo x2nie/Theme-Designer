@@ -98,7 +98,11 @@ export class DesktopTheme extends Component{
         const ini = parseIniFile(content)
         const colors = ini["Control Panel\\Colors"]
         for (let [key, value] of Object.entries(colors)) {
-            value = isNaN(parseInt(value)) ? value : `rgb(${value})`
+            if(key=='TitleWrap'){
+                value = value ? 'wrap' : 'nowrap';
+            } else {
+                value = isNaN(parseInt(value)) ? value : `rgb(${value})`
+            }
             this.data[key] = value;
             // console.log(`${key}: ${value}`);
         }

@@ -12,16 +12,16 @@ desktop-icons{
     di {
         position: relative;
         // max-width: 100px;
-        background: red;
+        // background: red;
         display: flex;
         flex-direction: column;
         align-items: center;
         overflow: visible;
-        margin-bottom: var(--VertSpacing, 43);
+        height: var(--VertSpacing, 43);
 
         &::before{
             content: '';
-            position: absolute;
+            // position: absolute;
             display: block;
             // background: url("images/icon/my-computer-32x32.png");
             // background: url("images/icon/my-computer-32x32.png");
@@ -32,19 +32,59 @@ desktop-icons{
             background-repeat: no-repeat; /* Hindari pengulangan gambar */
             background-position: center; /* Pastikan gambar berada di tengah */
         }
-        &::after{
-            content: attr(label);
-            position: absolute;
-            top: 34px;
+        // &::after{
+        //     content: attr(label);
+        //     position: absolute;
+        //     top: 34px;
+        //     text-align: center;
+        //     padding: 0 2px;
+        //     font-family: Arial;
+        //     font-size: 12px;
+        //     width: auto;
+        //     text-wrap: nowrap;
+        //     // font-family: var(--IconFont-Name);
+        //     font-weight: var(--IconFont-Weight);
+        //     background: var(--Background);
+        // }
+        i{
+            display: block;
+            margin-top: 3px;
+            font-style: normal;
+            // background: fuchsia;
+            background: var(--Background);
+            border: 1px dotted transparent;
+        }
+        &:focus i {
+            border-color: white;
+        }
+        span{
+            // position: relative;
+            display: block;
             text-align: center;
             padding: 0 2px;
             font-family: Arial;
             font-size: 12px;
             width: auto;
             text-wrap: nowrap;
+            text-wrap: var(--TitleWrap, wrap);
             // font-family: var(--IconFont-Name);
             font-weight: var(--IconFont-Weight);
-            background: var(--Background);
+            // color: lime;
+            background: inherit;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: invert(1) grayscale(1) contrast(9);
+            // z-index: 1;
+            
+            // &::before{
+            //     content: '';
+            //     position: absolute;
+            //     inset: 0;
+            //     // background: var(--Background);
+            //     background: fuchsia;
+            //     z-index: -1;
+            // }
         }
 
         &#my-computer::before {background-image: var(--di-my-computer);}
