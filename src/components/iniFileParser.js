@@ -32,7 +32,7 @@ export function parseIniFile(content) {
     return result;
 }
 
-function _DefaultIcon(GUID, key='DefaultIcon'){
+function _DefaultIcon(GUID, key='DefaultValue'){
     const MyComputer = this[`CLSID\\{${GUID}}\\DefaultIcon`]
     if(MyComputer && MyComputer[key]){
         MyComputer.icon = MyComputer[key].replace(/\\/g, '/');
