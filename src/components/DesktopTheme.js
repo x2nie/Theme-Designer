@@ -35,8 +35,8 @@ export class DesktopTheme extends Component{
             console.log(this.colorSchemesIni)
         })
 
-        const scroll10px = useRef('scroll10px')
-        onMounted(() => scroll10px.el.scrollTop = 10);
+        // const scroll10px = useRef('scroll10px')
+        // onMounted(() => scroll10px.el.scrollTop = 10);
 
 
         useEffect(

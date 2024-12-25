@@ -38,11 +38,31 @@ $HotTrackingColor : rgb(0 0 128) !default;
 $MenuHilight : rgb(49 106 197) !default;
 $MenuBar : rgb(236 233 216) !default;
 
+$BorderWidth: 1;
+$ScrollHeight: 13;
+$ScrollWidth: 13;
+$CaptionWidth: 18;
+$CaptionHeight: 18;
+$SmCaptionWidth: 15;
+$SmCaptionHeight: 15;
+$MenuHeight: 18; //menubar.height
+$MenuWidth: 18;  //popup.min-width?
+
 //? Switch visibility between close button (right)  vs sysmenu (left)
 $display-close-button: unset !default;
 $display-sys-button: none !default;
 
 :root {
+    --BorderWidth: #{$BorderWidth};
+    --ScrollHeight: #{$ScrollHeight};
+    --ScrollWidth: #{$ScrollWidth};
+    --CaptionWidth: #{$CaptionWidth};
+    --CaptionHeight: #{$CaptionHeight};
+    --SmCaptionWidth: #{$SmCaptionWidth};
+    --SmCaptionHeight: #{$SmCaptionHeight};
+    --MenuHeight: #{$MenuHeight};
+    --MenuWidth: #{$MenuWidth};
+
     --ActiveTitle: #{$ActiveTitle};
     --Background: #{$Background};
     --Hilight: #{$Hilight};

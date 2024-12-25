@@ -2,7 +2,7 @@
 // import typescriptLogo from './typescript.svg'
 // import viteLogo from '/vite.svg'
 // import { setupCounter } from './counter.ts'
-import { loadFile, mount, reactive } from '@odoo/owl';
+import { loadFile, mount } from '@odoo/owl';
 import Application from './application/App';
 
 

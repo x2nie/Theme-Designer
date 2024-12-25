@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <style>
+body {
+    overflow: scroll;
+}
+.pair {
+    --ScrollWidth: 18px !important;
+    --ScrollHeight: 13px !important;
+}
+.pair{
+    background-color: wheat;
+    border: 5px solid sandybrown;
+    display: flex;
+}
+.pair > * {
+    margin: 10px;
+}
+
+.scrollbar{
+    margin: 0 20px;
+    --ScrollWidth: 18px;
+    --ScrollHeight: 19px;
+    background-color: aquamarine;
+    border:2px solid blueviolet;
+    display: flex;
+    flex-direction: column;
+}
+.scrollbar-track{
+    flex-grow: 1;
+}
+.scrollbar-thumb {
+    min-height: 50%;
+    position: relative;
+    top: 10px;
+}
+
+
+
+.listbox{
+    background-color: white;
+    overflow-y: scroll;
+}
+    </style>
+</head>
+
+<body>
+    <div class="pair">
+        <div class="scrollbar">
+            <div class="scrollbar-button decrement"></div>
+            <div class="scrollbar-track">
+                <div class="scrollbar-track-piece decrement"></div>
+                <div class="scrollbar-thumb"></div>
+                <div class="scrollbar-track-piece increment"></div>
+            </div>
+            <div class="scrollbar-button increment"></div>
+        </div>
+        <div class="has-scrollbar" style="width: 300px; height: 150px; overflow: auto">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh massa, viverra non velit vitae,
+            scelerisque venenatis risus. Sed posuere risus tellus, sit amet vehicula nunc venenatis ut.
+            Nunc convallis augue eget odio imperdiet, eu consequat massa fringilla consectetur eleifend.
+            Curabitur in egestas justo, vel fermentum ante. Lorem ipsum dolor sit amet, consectetur elit.
+            Cras ullamcorper non nibh et placerat. Nullam ornare lectus eget consequat dignissim.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nibh massa, viverra non velit vitae,
+            scelerisque venenatis risus. Sed posuere risus tellus, sit amet vehicula nunc venenatis ut.
+            Nunc convallis augue eget odio imperdiet, eu consequat massa fringilla consectetur eleifend.
+            Curabitur in egestas justo, vel fermentum ante. Lorem ipsum dolor sit amet, consectetur elit.
+            Cras ullamcorper non nibh et placerat. Nullam ornare lectus eget consequat dignissim.
+          </div>
+
+    </div>    
+
+    <br>
+    <br>
+    
+    <!-- -->
+    <div class="pair">
+        <div class="scrollbar disabled">
+            <div class="scrollbar-button decrement"></div>
+            <div class="scrollbar-track">
+                <div class="scrollbar-track-piece decrement"></div>
+                <div class="scrollbar-thumb"></div>
+                <div class="scrollbar-track-piece increment"></div>
+            </div>
+            <div class="scrollbar-button increment"></div>
+        </div>
+
+        <ul class="listbox">
+            <li role="option">Facebook</li>
+            <li role="option" aria-selected="true">Amazon</li>
+            <li role="option">Apple</li>
+            <li role="option">Netflix</li>
+            <li role="option">Google</li>
+        </ul>
+    </div>
+    <script type="module" src="/src/scrollbars-demo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+.scrollbar {
+    &.vertical {
+        // background: red !important;
+        // ::-webkit-scrollbar-thumb:disabled{
+        //     min-height: 100%;
+        //     width: var(--ScrollWidth);
+        // }
+    }
+}
+// %outset-deep-2{
+    // background: greenyellow;
+    // border: lime;
+// }
+::-webkit-scrollbar{
+    width: var(--ScrollWidth);
+}
+::-webkit-scrollbar:vertical{
+    width: var(--ScrollWidth);
+}
+::-webkit-scrollbar-track:disabled{
+    // width: var(--ScrollWidth);
+    @extend %outset-deep-2;
+    // min-height: 100% !important;
+    // background: red !important;
+    // display: block;
+}
+::-webkit-scrollbar-track-piece{
+    // background: red;
+    padding-top: 5px;
+    border: 5px solid yellow;
+}

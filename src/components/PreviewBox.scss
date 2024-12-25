@@ -59,21 +59,38 @@
             // box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
             padding:2px;
             height: 100px;
+            display: flex;
+            flex-direction: row;
 
-            > div {
-                // overflow-y: scroll;
-                // overflow: hidden;
-                overflow-y: scroll;
-                pointer-events: none;
-                // max-height: 64px;
-                height: 100%;
+            .scrollbar.vertical {
+                display: flex;
+                flex-direction: column;
 
-                &::before,
-                &::after{
-                    content: '';
-                    display: block;
-                    height: 10px;
+                .scrollbar-track{
+                    flex-grow: 1;
+
+                    .scrollbar-thumb{
+                        min-height: 75%;
+                        position: relative;
+                        top:5px;
+                    }
                 }
+            }
+
+            // > div {
+            //     // overflow-y: scroll;
+            //     // overflow: hidden;
+            //     overflow-y: scroll;
+            //     pointer-events: none;
+            //     // max-height: 64px;
+            //     height: 100%;
+
+            //     &::before,
+            //     &::after{
+            //         content: '';
+            //         display: block;
+            //         height: 10px;
+            //     }
 
                 textarea{
                     pointer-events: all;
@@ -86,7 +103,7 @@
                     // overflow: visible;
                     padding: 0;
                 }
-            }
+            // }
         }
     }
 

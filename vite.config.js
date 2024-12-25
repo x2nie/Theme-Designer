@@ -14,4 +14,12 @@ export default defineConfig({
   //     }
   //   }
   // },
+  // build: {
+  //   rollupOptions: {
+  //     input: {
+  //       main: 'index.html',
+  //       scrollbars: 'public/scrollbars.html' // Tambahkan file foo.html sebagai entry point
+  //     }
+  //   }
+  // }
 });
