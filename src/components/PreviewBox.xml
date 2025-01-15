@@ -18,7 +18,14 @@
     <t t-call="sample_app.tool-window"/>
     <t t-call="sample_app.message-box"/>
 
+    <div id="scrollable" style="z-index: 10; position: absolute; top: 20px; width: 100px; height: 100px; overflow-y: scroll; background: yellow;">
+        <div style="width: 75px; height: 150px;position: relative;  background: yellowgreen;">
+            <script>
+                document.getElementById('scrollable').scrollTop= '25';
+            </script>
 
+        </div>
+    </div>
 
 </div>
 
@@ -118,7 +125,7 @@
             <div class="title-bar-sys" data-el="CaptionButton">
                 <button class="sys"></button>
             </div>
-            <div class="title-bar-text">Tool</div>
+            <div class="title-bar-text">Tool Win</div>
             <div class="title-bar-controls" data-el="CaptionButton">
                 <button class="close"></button>
             </div>
