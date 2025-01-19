@@ -8,9 +8,9 @@ import './PreviewBox.scss'
 import './DesktopIcon.scss'
 
 class Root extends Component {
-  static template = "theme_preview";
+static template = "theme_preview";
 
-  setup(){
+setup(){
     // this.data = useState(win95_colors);
     this.data = {...win95_colors}; // assure simple
     this.state = useState({
@@ -25,6 +25,16 @@ class Root extends Component {
         color_schemes : [],
         color_scheme : '',
     })
+
+    // Menerima pesan dari iframe
+    window.addEventListener('message', (event) => {
+        console.log('Pesan dari iframe:', event.data);
+        const {theTheme} = event.data
+        if(theTheme){
+            const style = document.getElementById('the-theme')
+            style.setAttribute('href', `themes/${theTheme}/${theTheme}.css`)
+        }
+    });
 
     // ? load color schems
     // onWillStart(async () => {
@@ -74,7 +84,7 @@ class Root extends Component {
 // async, so we can use async/await
 (async function setup() {
     const templates = await loadFile(`/owl_templates.xml`);
-  const env = {
+    const env = {
     // designer : reactive({
     //   root: null, //will be a form being designing
     //   pickedComponent: 'TButton'
@@ -83,8 +93,8 @@ class Root extends Component {
     // _t: someTranslateFn,
     // templates,
     // possibly other stuff
-  };
+    };
 
-  // @ts-ignore
-  mount(Root, document.body, { env, templates, });
+    // @ts-ignore
+    mount(Root, document.body, { env, templates, });
 })();

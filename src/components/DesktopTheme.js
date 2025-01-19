@@ -27,6 +27,7 @@ export class DesktopTheme extends Component{
             color_schemes : [],
             color_scheme : '',
         })
+        this.iframeRef = useRef('client')
 
         //? load color schems
         onWillStart(async () => {
@@ -53,6 +54,7 @@ export class DesktopTheme extends Component{
             (theme_name)=>{
                 this.state.color_schemes = this.colorSchemesIni[theme_name] || [];
                 this.state.color_scheme = '' //* Default.
+                this.iframeRef.el.contentWindow.postMessage({theTheme: theme_name})
                 // this.applyChanges()
             },
             () => [this.state.theme]
@@ -69,6 +71,8 @@ export class DesktopTheme extends Component{
             },
             () => [this.state.color_scheme]
         )
+
+
     }
 
     get sel_items(){
