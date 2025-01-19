@@ -15,7 +15,7 @@
 
         <div class="neck">
           <iframe style="width:400px; height:340px;border:none;"  src="/preview-box.html"></iframe>
-          <t t-call="theme_preview"/>
+          <!-- <t t-call="theme_preview"/> -->
           <!-- <t t-call="iframe_preview"/> -->
           <!-- <t t-call="Editors"/> -->
         </div>
