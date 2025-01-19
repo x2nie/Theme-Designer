@@ -4,11 +4,13 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev0": "vite",
+    "dev": "yarn build:xml & vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "build:xml": "node tools/bundle_xml/main.cjs",
     "watch:xml": "node tools/bundle_xml/watch_xml_templates.cjs",
+    "watch:themes": "node tools/bundle_themes/scss-watcher.cjs",
     "scantheme": "node tools/findThemes.cjs"
   },
   "devDependencies": {
