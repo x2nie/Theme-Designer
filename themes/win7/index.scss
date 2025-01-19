@@ -9,7 +9,7 @@
  @import "_variables.scss";
 // >.window-body *:not(.DMRESET){
 @import "_menu.scss";
->.window-body {
+// >.window-body {
 @import "_global.scss";
 @import "_balloon.scss";
 // :not(.DMRESET){
@@ -32,5 +32,5 @@
 @import "_textbox.scss";
 @import "_treeview.scss";
 @import "_typography.scss";
-}
+// }
 @import "_window.scss";
