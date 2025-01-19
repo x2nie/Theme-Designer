@@ -243,7 +243,14 @@
     color: #000;
     letter-spacing: 0;
     line-height: 15px;
+    // to keep text-shadow beautiful, it should be overflow = visible,
+    // hence we add padding-left 
+    // and therefor we shift the visual consistency by utilize margin-left = negative.
     padding-top: var(--window-spacing);
+    padding-left: var(--window-spacing);
+    padding-bottom: var(--window-spacing);
+    margin-left: calc(-1* var(--window-spacing));
+    margin-bottom: calc(-1* var(--window-spacing));
     text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff,
       0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
   }

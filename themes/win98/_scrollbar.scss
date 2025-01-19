@@ -7,6 +7,13 @@
         // }
     }
 }
+
+.scrollbar-button {
+	@extend %outset-deep-2;
+    --scrollbar-arrows-ButtonText: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAW0lEQVQ4T2NkGGSAcZC5h4FWDvrPwEC02ShqkR0EkkAHuBxMyEKYWYQ8jKEOXQOyo/A5BuZwqqvBZiA+3xMbilQLIWqlcUJRimwPzjRELcdQZA6hREeR4eRoBgBoXhAK6oiMhwAAAABJRU5ErkJggg==);
+    // background-image: var(--scrollbar-arrows-ButtonText);
+    
+}
 // %outset-deep-2{
     // background: greenyellow;
     // border: lime;
@@ -27,5 +34,5 @@
 ::-webkit-scrollbar-track-piece{
     // background: red;
     padding-top: 5px;
-    border: 5px solid yellow;
+    // border: 5px solid yellow;
 }

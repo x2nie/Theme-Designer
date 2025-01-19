@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev0": "vite",
-    "dev": "yarn build:xml & vite",
+    "dev": "yarn watch:xml & vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "build:xml": "node tools/bundle_xml/main.cjs",

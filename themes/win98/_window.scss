@@ -16,11 +16,17 @@
     // border-image: url(https://interactive-examples.mdn.mozilla.net/media/examples/border-diamonds.png) 30 round;
 }
 .window {
+    // $window-border-width: 2px;
+    border: 2px solid var(--ButtonFace);
     background: var(--ButtonFace);
     background: var(--ActiveBorder);
     color: var(--ButtonText);
-    box-shadow: var(--border-window-outer), var(--border-window-inner);
-    padding: calc(3px + var(--BorderWidth));
+    // box-shadow: var(--border-window-outer), var(--border-window-inner);
+    border-image: var(--border-window);
+    // border-width: 3px;
+    // border-image-width: 2px;
+    // padding: calc(3px + var(--BorderWidth));
+    padding: var(--BorderWidth);
 
     .title-bar {
         min-height: var(--CaptionHeight, 18px);

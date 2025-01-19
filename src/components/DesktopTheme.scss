@@ -1,11 +1,12 @@
 #desktop-theme-form {
     left: 25px ;
     top: 25px ;
-    width: 600px;
+    // width: 600px;
+    width: 900px;
 
     .preview-box{
         // background: teal;
-        margin: 15px 25px;
+        // margin: 15px 25px;
         min-height: 300px;
         // overflow-y: scroll;
         
@@ -14,5 +15,7 @@
 
     .neck{
         display: flex;
+        padding: 15px 25px;
+        gap: 25px;
     }
 }

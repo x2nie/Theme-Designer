@@ -58,4 +58,6 @@
         inset -2px -2px var(--ButtonFace), inset 2px 2px var(--WindowFrame);
 
     --border-status-bar-field: inset -1px -1px var(--ButtonFace), inset 1px 1px var(--ButtonShadow);
+
+    --border-window: url(img/window-border.gif) 2 / 2px;
 }

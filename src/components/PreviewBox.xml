@@ -18,16 +18,19 @@
     <t t-call="sample_app.tool-window"/>
     <t t-call="sample_app.message-box"/>
 
-    <div id="scrollable" style="z-index: 10; position: absolute; top: 20px; width: 100px; height: 100px; overflow-y: scroll; background: yellow;">
-        <div style="width: 75px; height: 150px;position: relative;  background: yellowgreen;">
-            <script>
-                document.getElementById('scrollable').scrollTop= '25';
-            </script>
-
-        </div>
-    </div>
-
 </div>
+<div id="scrollable0" style="z-index: 10; position: absolute; top: 20px; width: 100px; height: 100px;  background: yellow;">
+    <div class="scrollbar vertical">
+        <div class="scrollbar-button decrement vertical disabled"></div>
+        <div class="scrollbar-track vertical">
+            <div class="scrollbar-track-piece decrement vertical"></div>
+            <div class="scrollbar-thumb vertical"></div>
+            <div class="scrollbar-track-piece increment vertical"></div>
+        </div>
+        <div class="scrollbar-button increment vertical disabled"></div>
+    </div>
+</div>
+
 
 
 <div t-name="sample_app.inactive" t-attf-class="window {{state.theme}} win70 win980 sample_app" 
@@ -74,14 +77,15 @@
         <t t-call="sample_app.menu"/>
         <div class="window-body">
             <!-- <p>There's so much room for activities!</p> -->
-            <div id="window-and-scrollbar" data-el="Scrollbar">
-
+            <div id="window-and-scrollbar"  data-el="Scrollbar">
+                <div>
+                    Text
                 <!-- <div class="has-scrollbar" t-ref="scroll10px"> -->
-                    <textarea data-el="Input" 
+                    <!-- <textarea data-el="Input" 
                         style="box-shadow:none; border:none;"
-                        rows="4" readonly="readonly">Text</textarea>
+                        rows="4" readonly="readonly">Text</textarea> -->
                         <!-- t-out="getLongText()" -->
-                <div class="scrollbar vertical">
+                <!-- <div class="scrollbar vertical">
 					<div class="scrollbar-button decrement vertical disabled"></div>
 					<div class="scrollbar-track vertical">
 						<div class="scrollbar-track-piece decrement vertical"></div>
@@ -89,8 +93,15 @@
 						<div class="scrollbar-track-piece increment vertical"></div>
 					</div>
 					<div class="scrollbar-button increment vertical disabled"></div>
-				</div>
+				</div> -->
                 <!-- </div> -->
+                    <div  id="scrollable" >
+                        <script>
+                            document.getElementById('scrollable').scrollTop= '25';
+                        </script>
+            
+                    </div>
+                </div>
             </div>
             
         </div>

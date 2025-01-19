@@ -65,10 +65,10 @@
 // 	border: 1px solid var(--ButtonShadow);
 // 	box-shadow: none;
 // }
-.scrollbar-button.disabled {
-	background-image: var(--scrollbar-arrows-GrayText), var(--scrollbar-arrows-ButtonHilight);
-	background-color: fuchsia;
-}
+// .scrollbar-button.disabled {
+// 	background-image: var(--scrollbar-arrows-GrayText), var(--scrollbar-arrows-ButtonHilight);
+// 	background-color: fuchsia;
+// }
 
 .scrollbar-button.horizontal.decrement.disabled {
 	background-position: /* left arrow */
@@ -111,6 +111,9 @@
 	height: var(--ScrollHeight);
 }
 
+::-webkit-scrollbar-button{
+	@extend .scrollbar-button;
+}
 // ::-webkit-scrollbar {
 // 	@extend .scrollbar;
 // }

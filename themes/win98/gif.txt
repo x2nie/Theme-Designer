@@ -1,0 +1,3 @@
+
+Using gif if smaller size, so smaller css
+replace colors in gif, doesn't neeed to redraw, only change the palette.

@@ -6,7 +6,7 @@
       <div class="field-row-stacked" >
          <label for="ed-theme">Window &amp; Border</label>
          <select id="ed-theme" t-model="state.theme">
-            <option value="win98">Classic Style</option>
+            <option value="win98">Classic 98 Style</option>
             <option value="win95">Win 95 Style</option>
             <option value="winXP">XP Style</option>
             <option value="win7">Win 7 Style</option>

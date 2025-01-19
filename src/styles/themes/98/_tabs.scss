@@ -10,6 +10,8 @@ menu[role="tablist"] {
         border-top-right-radius: 3px;
         border-top-left-radius: 3px;
         border-bottom: 2px solid transparent;
+        padding: 3px 12px;
+
         &:first-of-type::before {
             content: "";
             display: block;
@@ -30,7 +32,6 @@ menu[role="tablist"] {
                 left: 0;
             }
         }
-        padding: 3px 12px;
     }
 }
 
