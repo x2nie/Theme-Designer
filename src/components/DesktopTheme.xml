@@ -3,7 +3,7 @@
 <t t-name="DesktopTheme.Form">
     
 
-    <div id="desktop-theme-form" class="window win980 winNT0 win7 winXP0 glass active" style="z-index:0">
+    <div id="desktop-theme-form" class="window win980 winNT0 win70 winXP0 glass active" style="z-index:0">
         <div class="title-bar">
           <div class="title-bar-text">Another window with contents</div>
           <div class="title-bar-controls">

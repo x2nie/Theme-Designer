@@ -1,6 +1,6 @@
 <templates>
 
-<div t-name="theme_preview" class="DMRESET preview-box" 
+<div t-name="theme_preview" class="preview-box" 
     t-att-style="state.fullCss"
     data-el="Desktop"
     t-on-click="previewClick" >
@@ -33,7 +33,7 @@
 
 
 
-<div t-name="sample_app.inactive" t-attf-class="window {{state.theme}} win70 win980 sample_app" 
+<div t-name="sample_app.inactive" t-attf-class="window sample_app" 
              t-att-style="state.fullCss"
             data-el="CaptionButton"
     >
@@ -59,7 +59,7 @@
 </div>
 
 
-<div t-name="sample_app.active" t-attf-class="window {{state.theme}} win70 win980 active sample_app" 
+<div t-name="sample_app.active" t-attf-class="window active sample_app" 
              t-att-style="state.fullCss"
             data-el="BorderActive"
     >
@@ -112,7 +112,7 @@
         </div>
 </div>
 
-<div t-name="sample_app.message-box" t-attf-class="window {{state.theme}} win70 win980 active message-box" 
+<div t-name="sample_app.message-box" t-attf-class="window active message-box" 
         data-el="Form"
          t-att-style="state.fullCss"
     >
@@ -133,7 +133,7 @@
         </div>
 </div>
 
-<div t-name="sample_app.tool-window" t-attf-class="window tool-window {{state.theme}} active" 
+<div t-name="sample_app.tool-window" t-attf-class="window tool-window active" 
         data-el="Form"
          t-att-style="state.fullCss"
     >
