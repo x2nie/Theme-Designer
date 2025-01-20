@@ -71,8 +71,13 @@ export class DesktopTheme extends Component{
             },
             () => [this.state.color_scheme]
         )
+        
+        // Menerima pesan dari iframe
+        window.addEventListener('message', (event) => {
+            const {theScope} = event.data
 
-
+            if(theScope) this.switchScope(theScope);
+        });
     }
 
     get sel_items(){
@@ -212,15 +217,18 @@ export class DesktopTheme extends Component{
         console.log('state:', this.state)
         console.log('data:', this.data)
         const item = findEl(ev.target)
-        const scoop = spec[item];
-        if(!scoop){
+        this.switchScope(item)
+    }
+    switchScope(item){
+        const scope = spec[item];
+        if(!scope){
             console.log('not found scoop:', item)
             return
         }
         this.state.item = item;
-        this.state.mapping = scoop;
+        this.state.mapping = scope;
         //? prepare .state
-        for(const [k,v] of Object.entries(scoop)){
+        for(const [k,v] of Object.entries(scope)){
             this.state[k] = win95_colors[v]
         }
     }

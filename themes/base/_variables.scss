@@ -48,6 +48,10 @@ $SmCaptionHeight: 15;
 $MenuHeight: 18; //menubar.height
 $MenuWidth: 18;  //popup.min-width?
 
+$HorzSpacing: 43;
+$VertSpacing: 75;
+
+
 //? Switch visibility between close button (right)  vs sysmenu (left)
 $display-close-button: unset !default;
 $display-sys-button: none !default;
@@ -62,6 +66,9 @@ $display-sys-button: none !default;
     --SmCaptionHeight: #{$SmCaptionHeight};
     --MenuHeight: #{$MenuHeight};
     --MenuWidth: #{$MenuWidth};
+
+    --HorzSpacing: #{$HorzSpacing}px;
+    --VertSpacing: #{$VertSpacing}px;
 
     --ActiveTitle: #{$ActiveTitle};
     --Background: #{$Background};

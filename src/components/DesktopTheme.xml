@@ -14,9 +14,9 @@
         </div>
 
         <div class="neck">
-          <iframe style="width:400px; height:340px;border:none;"  src="/preview-box.html" t-ref="client"></iframe>
+          <!-- <iframe style="width:400px; height:340px;border:none;"  src="/preview-box.html" t-ref="client"></iframe> -->
           <!-- <t t-call="theme_preview"/> -->
-          <!-- <t t-call="iframe_preview"/> -->
+          <t t-call="iframe_preview"/>
           <!-- <t t-call="Editors"/> -->
         </div>
 
@@ -147,6 +147,10 @@
           </article>
 </t>          
 
-<iframe t-name="iframe_preview" src="preview-box.html"></iframe>
+<iframe t-name="iframe_preview" 
+  src="preview-box.html"  
+  t-ref="client"
+  style="width:400px; height:340px;border:none;" 
+></iframe>
 
 </templates>
