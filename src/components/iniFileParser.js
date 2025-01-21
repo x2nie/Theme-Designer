@@ -1,5 +1,6 @@
 export function parseIniFile(content) {
-    const result = {_DefaultIcon};
+    // const result = {_DefaultIcon};
+    const result = {};
     let currentSection = null;
 
     // Split by line breaks and iterate over lines

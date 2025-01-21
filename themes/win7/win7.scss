@@ -1,3 +1,16 @@
+/** 
+	[ThemeInfo]
+		Name = Win7
+		
+	[Schemes]
+		Nature = style: --ActiveColor:#123123
+
+	[Variants]
+		Normal = class:
+		Glass Effect = class:glass
+    
+**/
+
 //  .win7.window {
     @import "./index.scss";
      @import "../base/index";

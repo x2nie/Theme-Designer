@@ -1,4 +1,4 @@
-import { Component, loadFile, onMounted, onWillStart, useEffect, useRef, useState } from "@odoo/owl";
+import { Component, loadFile, onMounted, onRendered, onWillStart, useEffect, useRef, useState } from "@odoo/owl";
 import { parseIconMetrics, parseIniFile, parseNonclientMetrics } from "./iniFileParser";
 import { FieldColor } from "./FieldColor";
 import { FieldSpin } from "./FieldSpin";
@@ -16,7 +16,7 @@ export class DesktopTheme extends Component{
         // this.data = useState(win95_colors);
         this.data = {...win95_colors}; // assure simple
         this.state = useState({
-            theme: 'win95',
+            theme: 'win7',
             item: 'Desktop',
             size: 10,
             font: {name:'Arial'},
@@ -59,6 +59,15 @@ export class DesktopTheme extends Component{
             },
             () => [this.state.theme]
         )
+        // useEffect(
+        //     () => {
+        //         // setTimeout(() => {
+                    
+        //             this.iframeRef.el.contentWindow.postMessage({theTheme: this.state.theme})
+        //         // }, 500);
+        //     },
+        //     () => [this.iframeRef.el]
+        // )
 
         //? user change color schem, let aplly the colors
         useEffect(
@@ -99,6 +108,7 @@ export class DesktopTheme extends Component{
     }
 
     async applyThemeFile(){
+        return
         this.data = {...win95_colors}; //reset all
         const {theme, color_scheme} = this.state;
         const themeFile = this.colorSchemesIni[theme][color_scheme]
