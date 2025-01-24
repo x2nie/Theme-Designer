@@ -38,7 +38,7 @@ $HotTrackingColor : rgb(0 0 128) !default;
 $MenuHilight : rgb(49 106 197) !default;
 $MenuBar : rgb(236 233 216) !default;
 
-$BorderWidth: 1px;
+$BorderWidth: 1;
 $ScrollHeight: 13;
 $ScrollWidth: 13;
 $CaptionWidth: 18;
@@ -57,15 +57,15 @@ $display-close-button: unset !default;
 $display-sys-button: none !default;
 
 :root {
-    --BorderWidth: #{$BorderWidth};
-    --ScrollHeight: #{$ScrollHeight};
-    --ScrollWidth: #{$ScrollWidth};
-    --CaptionWidth: #{$CaptionWidth};
-    --CaptionHeight: #{$CaptionHeight};
-    --SmCaptionWidth: #{$SmCaptionWidth};
-    --SmCaptionHeight: #{$SmCaptionHeight};
-    --MenuHeight: #{$MenuHeight};
-    --MenuWidth: #{$MenuWidth};
+    --BorderWidth: #{$BorderWidth}px;
+    --ScrollHeight: #{$ScrollHeight}px;
+    --ScrollWidth: #{$ScrollWidth}px;
+    --CaptionWidth: #{$CaptionWidth}px;
+    --CaptionHeight: #{$CaptionHeight}px;
+    --SmCaptionWidth: #{$SmCaptionWidth}px;
+    --SmCaptionHeight: #{$SmCaptionHeight}px;
+    --MenuHeight: #{$MenuHeight}px;
+    --MenuWidth: #{$MenuWidth}px;
 
     --HorzSpacing: #{$HorzSpacing}px;
     --VertSpacing: #{$VertSpacing}px;
