@@ -11,6 +11,7 @@
 		Standard = class:
 		Peggy = class: peggy-css
 		Blue = class: blue-css
+		Dark: Vista Esque Midnight (green) = class: vista-esque-midnight-green-css
 
 	[Variants]
 		Normal = class:
@@ -30,4 +31,7 @@
 
 .peggy-css {
     @import './peggys-pastels.scss';
+}
+.vista-esque-midnight-green-css {
+    @import './vista-esque-midnight-green.scss';
 }

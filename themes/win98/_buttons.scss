@@ -9,15 +9,18 @@ button {
     border: none;
     color: var(--ButtonText);
     background: var(--ButtonFace);
-    box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+    // box-shadow: var(--border-raised-outer), var(--border-raised-inner);
     border-radius: 0;
+    border: 2px solid var(--ButtonFace);
+    border-image: var(--button-normal-border-imag);
     // min-width: 75px;
     // min-height: 23px;
     // padding: 0 12px;
     &:not(:disabled) {
         &:active,
         &.active {
-            box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+            // box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+            border-image: var(--button-active-border-image);
         }
     }
     &:focus,

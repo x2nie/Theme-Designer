@@ -21,8 +21,8 @@
     background: var(--ButtonFace);
     background: var(--ActiveBorder);
     color: var(--ButtonText);
-    // box-shadow: var(--border-window-outer), var(--border-window-inner);
-    border-image: var(--border-window);
+    // box-shadow: var(--window-border-image-outer), var(--window-border-image-inner);
+    border-image: var(--window-border-image);
     // border-width: 3px;
     // border-image-width: 2px;
     // padding: calc(3px + var(--BorderWidth));
@@ -60,10 +60,10 @@
                 margin: 0 auto;
                 content: "";
                 display: block;
-                // position: absolute;
+                position: absolute;
                 // inset: 3px 2px;
-                left: 2px;
-                top: 2px;
+                left: 0px;
+                top: 0px;
                 // right: 0;
                 // bottom: 0;
                 width: 12px;

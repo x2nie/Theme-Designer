@@ -45,6 +45,10 @@
 	--GradientInactiveTitle: rgb(236, 145, 162);
 	--MenuHilight: rgb(162, 219, 210);
 	--MenuBar: rgb(244, 193, 202);
+
+	/* fallback */
+	--window-border-image: var(--button-normal-border-imag);
+
 }
 
 /*# sourceMappingURL=peggys-pastels.css.map */

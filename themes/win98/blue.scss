@@ -45,6 +45,10 @@
 	--HotTrackingColor: rgb(0, 0, 128);
 	--MenuHilight: rgb(0, 0, 128);
 	--MenuBar: rgb(166, 202, 240);
+	
+	/* fallback */
+	--window-border-image: var(--button-normal-border-imag);
+
 }
 
 /*# sourceMappingURL=blue.css.map */
