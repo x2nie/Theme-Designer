@@ -26,6 +26,9 @@ export class DesktopTheme extends Component{
             fullCss : this.windowStyle(),
             color_schemes : [],
             color_scheme : '',
+
+            //? new pool
+            themeInfo: null,
         })
         this.iframeRef = useRef('client')
 
@@ -59,23 +62,15 @@ export class DesktopTheme extends Component{
             },
             () => [this.state.theme]
         )
-        // useEffect(
-        //     () => {
-        //         // setTimeout(() => {
-                    
-        //             this.iframeRef.el.contentWindow.postMessage({theTheme: this.state.theme})
-        //         // }, 500);
-        //     },
-        //     () => [this.iframeRef.el]
-        // )
 
         //? user change color schem, let aplly the colors
         useEffect(
-            (theme_name)=>{
+            (color_scheme)=>{
                 // debugger
                 if(this.state.color_scheme == '') return //* Default.
                 // this.applyChanges()
-                this.applyThemeFile()
+                // this.applyThemeFile()
+                this.iframeRef.el.contentWindow.postMessage({theSceme: color_scheme})
                 // this.state.fullCss = this.windowStyle()
             },
             () => [this.state.color_scheme]
@@ -83,10 +78,18 @@ export class DesktopTheme extends Component{
         
         // Menerima pesan dari iframe
         window.addEventListener('message', (event) => {
-            const {theScope} = event.data
+            const {theScope, themeInfo} = event.data
 
             if(theScope) this.switchScope(theScope);
+            if(themeInfo) this.updateThemeInfo(themeInfo);
         });
+    }
+
+    updateThemeInfo(themeInfo){
+        // console.log(themeInfo)
+        this.state.themeInfo = themeInfo
+        // this.state.color_schemes = []
+        console.log(Object.keys(this.state.themeInfo.Schemes))
     }
 
     get sel_items(){

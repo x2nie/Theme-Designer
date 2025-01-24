@@ -30,12 +30,13 @@ static template = "theme_preview";
 
         // Menerima pesan dari iframe
         window.addEventListener('message', (event) => {
-            const {theTheme} = event.data
+            const {theTheme, theSceme} = event.data
 
             if(theTheme) this.switchTheme(theTheme);
+            if(theSceme) this.switchScheme(theSceme);
         });
         onWillStart(
-            () => this.switchTheme('win7')
+            () => this.switchTheme('win98')
         )
     }
 
@@ -43,7 +44,7 @@ static template = "theme_preview";
         //? host ask for switch of theme.css
         const styleElement = document.getElementById('the-theme')
         // styleElement.setAttribute('src', `themes/${theme}/${theme}.css`)
-        let themeInfo = {ThemeInfo:{Name:null}, Schemes:[], Variants:[]}
+        let themeInfo = {ThemeInfo:{Name:null}, Schemes:{}, Variants:[]}
         const filePath =  `themes/${theme}/${theme}.css`
         try {
             // Fetch CSS file content
@@ -53,7 +54,7 @@ static template = "theme_preview";
             }
 
             const cssContent = await response.text();
-            console.log(`CSS content of ${filePath}:\n`, cssContent);
+            // console.log(`CSS content of ${filePath}:\n`, cssContent);
 
             //? ambil theme info
             const regex = /\/\*\*\s+(\[ThemeInfo\][^*]+)\*\*\//gm;
@@ -77,6 +78,19 @@ static template = "theme_preview";
         window.parent.postMessage({themeInfo})
     }
 
+    switchScheme(scheme){
+        const [kind, value] = splitOnce(scheme, ':')
+        console.log([kind, value])
+        switch (kind) {
+            case 'class':
+                document.body.className = value;
+                break;
+        
+            default:
+                break;
+        }
+    }
+
     previewClick(ev){
         //? user click an element
         const scope = findEldataScope(ev.target)
@@ -92,6 +106,13 @@ function findEldataScope(el) {
     }
 }
 
+function splitOnce(str, delimiter) {
+    const index = str.indexOf(delimiter);
+    if (index === -1) {
+        return [str]; // Jika delimiter tidak ditemukan, kembalikan string utuh dalam array
+    }
+    return [str.slice(0, index), str.slice(index + delimiter.length)];
+}
 // mount(Root, document.body);
 // async, so we can use async/await
 (async function setup() {
