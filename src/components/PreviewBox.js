@@ -14,26 +14,27 @@ static template = "theme_preview";
 
     setup(){
         // this.data = useState(win95_colors);
-        this.data = {...win95_colors}; // assure simple
-        this.state = useState({
-            theme: 'win98',
-            item: 'Desktop',
-            size: 10,
-            font: {name:'Arial'},
-            color: win95_colors.Background,//'lime',
-            color2: 'fuchsia',
-            mapping: spec.Desktop,
-            fullCss : '',// this.windowStyle(),
-            color_schemes : [],
-            color_scheme : '',
-        })
+        // this.data = {...win95_colors}; // assure simple
+        // this.state = useState({
+            // theme: 'win98',
+            // item: 'Desktop',
+            // size: 10,
+            // font: {name:'Arial'},
+            // color: win95_colors.Background,//'lime',
+            // color2: 'fuchsia',
+            // mapping: spec.Desktop,
+            // fullCss : '',// this.windowStyle(),
+            // color_schemes : [],
+            // color_scheme : '',
+        // })
 
         // Menerima pesan dari iframe
         window.addEventListener('message', (event) => {
-            const {theTheme, theSceme} = event.data
+            const {theTheme, theSceme, thePatch} = event.data
 
             if(theTheme) this.switchTheme(theTheme);
             if(theSceme) this.switchScheme(theSceme);
+            if(thePatch) this.applyPatch(thePatch);
         });
         onWillStart(
             () => this.switchTheme('win98')
@@ -84,10 +85,35 @@ static template = "theme_preview";
         switch (kind) {
             case 'class':
                 document.body.className = value;
+                setTimeout(() => {
+                    this.parseCurrentTheme()
+                }, 500);
                 break;
         
             default:
                 break;
+        }
+    }
+
+    parseCurrentTheme(){
+        // grab actual css into obj
+        const spec = {...win95_colors}
+        const style = window.getComputedStyle(document.body)
+        Object.keys(win95_colors).forEach(name =>{
+            let value = style.getPropertyValue(`--${name}`);
+            if(value.startsWith('rgb('))
+                value = rgbToHex(value);
+            spec[name] = value
+        })
+        // console.log( style.getPropertyValue('--bar') ) // #336699
+        window.parent.postMessage({theSpec: spec})
+    }
+
+    applyPatch(changes){
+        // console.log('applying css:', changes)
+        const style = document.body.style
+        for (const [key, value] of Object.entries(changes)) {
+            style.setProperty(`--${key}`, value)
         }
     }
 
@@ -104,6 +130,23 @@ function findEldataScope(el) {
     if(el.parentElement){
         return findEldataScope(el.parentElement)
     }
+}
+
+function rgbToHex(rgbString) {
+    // Regex untuk menangkap angka-angka di dalam format rgb
+    const regex = /rgb\((\d+)[,\s]+(\d+)[,\s]+(\d+)\)/;
+    const match = rgbString.match(regex);
+
+    if (!match) {
+        throw new Error("Format warna tidak valid");
+    }
+
+    // Ekstrak nilai R, G, B dari hasil match
+    const [_, r, g, b] = match;
+
+    // Konversi setiap nilai ke format hex dengan padding 0 bila perlu
+    const toHex = (num) => parseInt(num).toString(16).padStart(2, '0');
+    return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
 
 function splitOnce(str, delimiter) {

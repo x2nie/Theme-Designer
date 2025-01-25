@@ -20,7 +20,7 @@ export class FieldColor extends Component {
         // )
         onWillUpdateProps(({color})=>{
             if(color && !this.props.disabled){
-                console.log('field.color:',color)
+                // console.log('field.color:',color)
                 this.state.color = color2color(color)
 
             }
@@ -47,7 +47,7 @@ function color2color(color){
     document.body.removeChild(elem);
      // Mengonversi rgb ke hex
     const result = rgbToHex(rgb);
-    console.log('original:',color, result)
+    // console.log('original:',color, result)
     return result
 }
 

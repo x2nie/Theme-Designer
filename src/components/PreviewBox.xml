@@ -1,10 +1,8 @@
 <templates>
 
 <div t-name="theme_preview" class="preview-box" 
-    t-att-style="state.fullCss"
     data-el="Desktop"
     t-on-click="previewClick" >
-    <!-- t-att-style="state.fullCss" -->
 
     <desktop-icons data-el="Icons">
         <di tabindex="0" id="my-computer">   <i><span>My Computer</span></i></di>
@@ -34,14 +32,13 @@
 
 
 <div t-name="sample_app.inactive" t-attf-class="window sample_app" 
-             t-att-style="state.fullCss"
-            data-el="CaptionButton"
+        data-el="BorderInactive"
     >
-        <div class="title-bar" data-el="BorderInactive">
+        <div class="title-bar" >
             <div class="title-bar-sys" data-el="CaptionButton">
                 <button class="sys"></button>
             </div>
-            <div class="title-bar-text">Inactive Window</div>
+            <div class="title-bar-text" data-el="InactiveTitle">Inactive Window</div>
             <div class="title-bar-controls" data-el="CaptionButton">
                 <button class="minimize"></button>
                 <button class="maximize"></button>
@@ -60,7 +57,6 @@
 
 
 <div t-name="sample_app.active" t-attf-class="window active sample_app" 
-             t-att-style="state.fullCss"
             data-el="BorderActive"
     >
         <div class="title-bar" data-el="ActiveTitle">
@@ -114,7 +110,6 @@
 
 <div t-name="sample_app.message-box" t-attf-class="window active message-box" 
         data-el="Form"
-         t-att-style="state.fullCss"
     >
         <div class="title-bar" data-el="ActiveTitle">
             <div class="title-bar-sys" data-el="CaptionButton">
@@ -135,7 +130,6 @@
 
 <div t-name="sample_app.tool-window" t-attf-class="window tool-window active" 
         data-el="Form"
-         t-att-style="state.fullCss"
     >
         <div class="title-bar" data-el="ActiveTitle">
             <div class="title-bar-sys" data-el="CaptionButton">

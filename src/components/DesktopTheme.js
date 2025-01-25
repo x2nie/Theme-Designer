@@ -32,12 +32,12 @@ export class DesktopTheme extends Component{
         })
         this.iframeRef = useRef('client')
 
-        //? load color schems
-        onWillStart(async () => {
-            const ini = await loadFile(`/color_schemes.ini`);
-            this.colorSchemesIni = parseIniFile(ini)
-            console.log(this.colorSchemesIni)
-        })
+        // //? load color schems
+        // onWillStart(async () => {
+        //     const ini = await loadFile(`/color_schemes.ini`);
+        //     this.colorSchemesIni = parseIniFile(ini)
+        //     console.log(this.colorSchemesIni)
+        // })
 
         // const scroll10px = useRef('scroll10px')
         // onMounted(() => scroll10px.el.scrollTop = 10);
@@ -55,7 +55,7 @@ export class DesktopTheme extends Component{
         //? user change theme, let reload its color schemes list
         useEffect(
             (theme_name)=>{
-                this.state.color_schemes = this.colorSchemesIni[theme_name] || [];
+                // this.state.color_schemes = this.colorSchemesIni[theme_name] || [];
                 this.state.color_scheme = '' //* Default.
                 this.iframeRef.el.contentWindow.postMessage({theTheme: theme_name})
                 // this.applyChanges()
@@ -78,10 +78,11 @@ export class DesktopTheme extends Component{
         
         // Menerima pesan dari iframe
         window.addEventListener('message', (event) => {
-            const {theScope, themeInfo} = event.data
+            const {theScope, themeInfo, theSpec} = event.data
 
             if(theScope) this.switchScope(theScope);
             if(themeInfo) this.updateThemeInfo(themeInfo);
+            if(theSpec) this.updateData(theSpec);
         });
     }
 
@@ -90,6 +91,10 @@ export class DesktopTheme extends Component{
         this.state.themeInfo = themeInfo
         // this.state.color_schemes = []
         console.log(Object.keys(this.state.themeInfo.Schemes))
+    }
+
+    updateData(data){
+        this.data = data;
     }
 
     get sel_items(){
@@ -225,13 +230,13 @@ export class DesktopTheme extends Component{
         return ret;
     }
 
-    previewClick(ev){
-        // console.log('EL:', findEl(ev.target))
-        console.log('state:', this.state)
-        console.log('data:', this.data)
-        const item = findEl(ev.target)
-        this.switchScope(item)
-    }
+    // previewClick(ev){
+    //     // console.log('EL:', findEl(ev.target))
+    //     console.log('state:', this.state)
+    //     console.log('data:', this.data)
+    //     const item = findEl(ev.target)
+    //     this.switchScope(item)
+    // }
     switchScope(item){
         const scope = spec[item];
         if(!scope){
@@ -242,7 +247,7 @@ export class DesktopTheme extends Component{
         this.state.mapping = scope;
         //? prepare .state
         for(const [k,v] of Object.entries(scope)){
-            this.state[k] = win95_colors[v]
+            this.state[k] = this.data[v]
         }
     }
     fillState(scoop){
@@ -251,21 +256,25 @@ export class DesktopTheme extends Component{
         }
     }
     applyChanges(){
-        // user click(state) --> send to html/css
+        //? user click(state) --> send to html/css
+        const changes = {}
         const scoop = this.state.mapping
         for(const n of ['size', 'color', 'color2', 'text']){
             const key = scoop[n]
             if(key != null){
-                this.data[key] = this.state[n]
+                // this.data[key] = this.state[n]
+                changes[key] = this.state[n]
             }
         }
-        for(const n of ['name', 'bold', 'italic']){
-            const key = scoop['font']
-            if(key != null){
-                this.data[key][n] = this.state.font[n]
-            }
-        }
-        this.state.fullCss = this.windowStyle()
+        // for(const n of ['name', 'bold', 'italic']){
+        //     const key = scoop['font']
+        //     if(key != null){
+        //         this.data[key][n] = this.state.font[n]
+        //     }
+        // }
+        // this.state.fullCss = this.windowStyle()
+        this.iframeRef.el.contentWindow.postMessage({thePatch: changes})
+
     }
 }
 
