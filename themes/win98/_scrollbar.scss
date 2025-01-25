@@ -1,8 +1,8 @@
 ::-webkit-scrollbar {
     background: var(--ButtonFace);
-    width: 16px;
+    width: var(--ScrollWidth);
     &:horizontal {
-        height: 17px;
+        height: var(--ScrollHeight);
     }
 }
 ::-webkit-scrollbar-corner {
