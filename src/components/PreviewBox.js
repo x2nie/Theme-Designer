@@ -37,7 +37,8 @@ static template = "theme_preview";
             if(thePatch) this.applyPatch(thePatch);
         });
         onWillStart(
-            () => this.switchTheme('win98')
+            // () => this.switchTheme('win98')
+            ()=> window.parent.postMessage({ready: true})
         )
     }
 
@@ -77,6 +78,9 @@ static template = "theme_preview";
         }
 
         window.parent.postMessage({themeInfo})
+        window.requestAnimationFrame(() => {
+            this.parseCurrentTheme()
+        });
     }
 
     switchScheme(scheme){
@@ -96,6 +100,7 @@ static template = "theme_preview";
     }
 
     parseCurrentTheme(){
+        //? report the current (live) style to host.
         // grab actual css into obj
         const spec = {...win95_colors}
         const style = window.getComputedStyle(document.body)
@@ -110,6 +115,7 @@ static template = "theme_preview";
     }
 
     applyPatch(changes){
+        //? user change a color, size, font, etc.
         // console.log('applying css:', changes)
         const style = document.body.style
         for (const [key, value] of Object.entries(changes)) {

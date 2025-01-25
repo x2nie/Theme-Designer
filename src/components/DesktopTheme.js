@@ -17,6 +17,7 @@ export class DesktopTheme extends Component{
         this.data = {...win95_colors}; // assure simple
         this.state = useState({
             theme: 'win7',
+            theme: 'win98',
             item: 'Desktop',
             size: 10,
             font: {name:'Arial'},
@@ -78,8 +79,9 @@ export class DesktopTheme extends Component{
         
         // Menerima pesan dari iframe
         window.addEventListener('message', (event) => {
-            const {theScope, themeInfo, theSpec} = event.data
+            const {ready, theScope, themeInfo, theSpec} = event.data
 
+            if(ready) this.iframeRef.el.contentWindow.postMessage({theTheme: this.state.theme});
             if(theScope) this.switchScope(theScope);
             if(themeInfo) this.updateThemeInfo(themeInfo);
             if(theSpec) this.updateData(theSpec);
@@ -94,6 +96,7 @@ export class DesktopTheme extends Component{
     }
 
     updateData(data){
+        console.log('updating.data=',data)
         this.data = data;
     }
 
@@ -239,6 +242,7 @@ export class DesktopTheme extends Component{
     // }
     switchScope(item){
         const scope = spec[item];
+        console.log('switching.scope:', item)
         if(!scope){
             console.log('not found scoop:', item)
             return

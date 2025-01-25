@@ -19,7 +19,7 @@ export class FieldColor extends Component {
         //     [this.input.el, this.state.color]
         // )
         onWillUpdateProps(({color})=>{
-            if(color && !this.props.disabled){
+            if(color /*&& !this.props.disabled*/){
                 // console.log('field.color:',color)
                 this.state.color = color2color(color)
 
