@@ -9,8 +9,10 @@
 		
 	[Schemes]
 		Standard = class:
-		Peggy = class: peggy-css
-		Blue = class: blue-css
+		Honey = class: honey-css
+		# Peggy = class: peggy-css
+		# Blue = class: blue-css
+		Under Water = class: under-water-css
 		Dark: Vista Esque Midnight (green) = class: vista-esque-midnight-green-css
 
 	[Variants]
@@ -34,4 +36,10 @@
 }
 .vista-esque-midnight-green-css {
     @import './vista-esque-midnight-green.scss';
+}
+.honey-css {
+	@import './honey.scss';
+}
+.under-water-css {
+	@import './underwater.scss';
 }
