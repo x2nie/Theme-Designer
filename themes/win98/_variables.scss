@@ -14,6 +14,7 @@ $etched-in-border-image: url(img/etched-in-border.gif) 2 / 2px;
 $etched-out-border-image: url(img/etched-out-border.gif) 2 / 2px;
 
 :root {
+    --checker: url(img/checker.gif);
     --sans-serif: "Pixelated MS Sans Serif", Arial;
     /* Color */
     // --surface: lightblue;

@@ -20,7 +20,8 @@
     }
     .sample_app{
         #window-and-scrollbar {
-            box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+            // box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+            border-image: var(--sunken2-border-image);
             position: relative;
             
             #scrollable {

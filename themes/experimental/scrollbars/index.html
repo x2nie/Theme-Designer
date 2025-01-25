@@ -7,8 +7,8 @@
             grid-template-columns: 200px 200px;
             gap: 10px;
             /* overflow: hidden; */
-            --width:10px;
-            --height:10px;
+            --ScrollWidth:10px;
+            --ScrollHeight:20px;
             --ButtonText: rgba(128, 0, 128, 0.514);
         }
         body> div {
@@ -32,27 +32,28 @@
             overflow: scroll;
         }
         p::before{
-            content: 'Lorem Ipsum';
+            content: 'Lorem Ipsum Sip Lah!';
             font-size: 62px;
             color: rgba(0, 0, 0, 0.322);
         }
         p::after {content: ''; position: absolute; left: 0; top:0;}
         p::after,
-        ::-webkit-scrollbar{background-color: rgba(137, 43, 226, 0.3);width: var(--width); height: var(--width);}
+        ::-webkit-scrollbar{background-color: rgba(137, 43, 226, 0.3);width: var(--ScrollWidth); height: var(--ScrollWidth);}
         ::-webkit-scrollbar-corner{background-color: rgba(137, 43, 226, 0.178);}
+        ::-webkit-scrollbar-thumb{border: 1px solid rgba(99, 42, 173, 0.452);background-color: rgba(238, 130, 238, 0.329);}
 
         p::after,
         ::-webkit-scrollbar-button{
-            width: var(--width); height: var(--width); 
+            width: var(--ScrollWidth); height: var(--ScrollHeight); 
             border: 1px solid rgba(99, 42, 173, 0.452);
 
             background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(229, 255, 0, 0.5));
-            background-position: center;
+            background-position: center ;
             background-repeat: no-repeat;
-            background-clip: padding-box;
+            /* background-clip: padding-box; */
             /* background-color: yellowgreen; */
             
-            background-size: calc(0.42 * var(--width)) calc(0.27 * var(--width)) ;
+            background-size: calc(0.5 * var(--ScrollWidth)) calc(0.25 * var(--ScrollWidth)) ;
         }
         p::after{
             background-size: cover;
@@ -62,8 +63,11 @@
         }
         /* * hORIZONTAL */
         ::-webkit-scrollbar-button:horizontal{
-            background-size: calc(0.25 * var(--height)) calc(0.5 * var(--width) - 1px);
-            background-position-y: calc(0.25 * var(--width) - 1px);
+            width: var(--ScrollHeight); 
+            height: var(--ScrollWidth); 
+            background-size: calc(0.25 * var(--ScrollWidth)) calc(0.5 * var(--ScrollWidth) - 1px);
+            background-position: center left;
+            background-position-y: calc(0.25 * var(--ScrollWidth) - 1px);
             
         }
         ::-webkit-scrollbar-button:horizontal:increment{
@@ -71,13 +75,14 @@
                 from 225deg at 100% 50%,
                 var(--ButtonText) 90deg, transparent 45deg
             );
-            background-position-x: calc(0.35 * var(--height) );;
+            /* background-position-x: calc(50% - (0.125 * var(--ScrollWidth) ) ); */
+            background-position-x: 50% ;
         }
         ::-webkit-scrollbar-button:horizontal:decrement{
             background-image: conic-gradient( 
                 from 45deg at 0% 50%,
                 var(--ButtonText) 90deg, transparent 45deg);
-            background-position-x: calc(0.25 * var(--height) );;
+            background-position-x: calc(50% - (0.125 * var(--ScrollWidth) ) );
         }
 
         ::-webkit-scrollbar-button:vertical:decrement{
@@ -94,9 +99,9 @@
 </head>
 <body>
 
-    <div style="background-image: url(21.png);--width:21px;--height:21px"><p></p></div>
-    <div style="background-image: url(42.png);--width:42px;--height:42px"><p></p></div>
-    <div style="background-image: url(13.png);--width:13px;--height:13px"><p></p></div>
-    <div style="background-image: url(18.png);--width:18px;--height:18px"><p></p></div>
+    <div style="background-image: url(21.png);--ScrollWidth:21px;--ScrollHeight:calc(1 * 21px)"><p></p></div>
+    <div style="background-image: url(42.png);--ScrollWidth:42px;--ScrollHeight:calc(1 * 42px)"><p></p></div>
+    <div style="background-image: url(13.png);--ScrollWidth:13px;--ScrollHeight:calc(1 * 13px)"><p></p></div>
+    <div style="background-image: url(18.png);--ScrollWidth:18px;--ScrollHeight:calc(1 * 18px)"><p></p></div>
 </body>
 </html>

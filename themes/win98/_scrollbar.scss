@@ -1,38 +1,101 @@
-.scrollbar {
-    &.vertical {
-        // background: red !important;
-        // ::-webkit-scrollbar-thumb:disabled{
-        //     min-height: 100%;
-        //     width: var(--ScrollWidth);
-        // }
+::-webkit-scrollbar {
+    background: var(--ButtonFace);
+    width: 16px;
+    &:horizontal {
+        height: 17px;
     }
 }
+::-webkit-scrollbar-corner {
+    background: var(--ButtonFace);
+}
+::-webkit-scrollbar-track {
+    background: var( --checker, var(--ButtonFace));
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--ButtonFace);
+    // box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+    border: 2px solid var(--ButtonShadow);
+    border-image: var(--window-border-image);
+}
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment,
+::-webkit-scrollbar-button:vertical:start:decrement,
+::-webkit-scrollbar-button:vertical:end:increment {
+    border: 2px solid var(--ButtonShadow);
+    border-image: var(--window-border-image);
+    &:active{
+        border-image: none;
+        border-width: 1px;
+    }
+}
+::-webkit-scrollbar-button {
+    // position: relative;
+    // border-width: 4px;
+    background-size: 9px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(229, 255, 0, 0.5));
+    // background-clip: padding-box;
 
-.scrollbar-button {
-	@extend %outset-deep-2;
-    --scrollbar-arrows-ButtonText: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAW0lEQVQ4T2NkGGSAcZC5h4FWDvrPwEC02ShqkR0EkkAHuBxMyEKYWYQ8jKEOXQOyo/A5BuZwqqvBZiA+3xMbilQLIWqlcUJRimwPzjRELcdQZA6hREeR4eRoBgBoXhAK6oiMhwAAAABJRU5ErkJggg==);
-    // background-image: var(--scrollbar-arrows-ButtonText);
-    
-}
-// %outset-deep-2{
-    // background: greenyellow;
-    // border: lime;
-// }
-::-webkit-scrollbar{
-    width: var(--ScrollWidth);
-}
-::-webkit-scrollbar:vertical{
-    width: var(--ScrollWidth);
-}
-::-webkit-scrollbar-track:disabled{
-    // width: var(--ScrollWidth);
-    @extend %outset-deep-2;
-    // min-height: 100% !important;
-    // background: red !important;
-    // display: block;
-}
-::-webkit-scrollbar-track-piece{
-    // background: red;
-    padding-top: 5px;
-    // border: 5px solid yellow;
+    &:vertical {
+        background-size: calc(0.5 * var(--ScrollWidth)) calc(0.25 * var(--ScrollWidth));
+        height: var(--ScrollHeight);
+        &:decrement {
+            background-image: conic-gradient( 
+                from 135deg at 50% 0%,
+                var(--ButtonText) 90deg, transparent 45deg
+            );
+            // background-image: url("./icon/button-up.svg");
+            // border: 3px solid lime;
+            // background-image: linear-gradient(120deg, transparent 63%, #fff 63%),
+            // linear-gradient(-120deg, transparent 63%, #fff 63%),
+            // linear-gradient(to top, #ccc, #000);
+
+            // content: 'X';
+            // &::before{
+            //     content: '^';
+            //     background: yellow;
+            //     color: red;
+            //     display: block;
+            //     position: absolute;
+            //     inset: 1px;
+            // }
+            // background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill0='var(--button-color)' style='fill:var(--button-color);fill:blue;'><polygon points='0,0 100,0 50,50'/></svg>");
+            // height: 16px;
+            // width: 16px;
+            // background-size: contain;
+            // background-position: center 2px;
+        }
+        &:increment {
+            // width: 16px;
+            // height: 17px;
+            // background-image: url("./icon/button-down.svg");
+            // background-color: var(--ButtonFace);
+            // color: lime;
+            background-image: conic-gradient( 
+                from 45deg at 50% 100%,
+                transparent 270deg, var(--ButtonText) 90deg
+            );
+        }
+    }
+    &:horizontal {
+        &:start {
+            // width: 16px;
+            // background-image: url("./icon/button-left.svg");
+            background-image: conic-gradient( 
+                from 45deg at 0% 50%,
+                var(--ButtonText) 90deg, transparent 45deg);
+            background-position-x: calc(50% - (0.125 * var(--ScrollWidth) ) );
+        }
+        &:end {
+            // width: 16px;
+            // background-image: url("./icon/button-right.svg");
+            background-image: conic-gradient( 
+                from 225deg at 100% 50%,
+                var(--ButtonText) 90deg, transparent 45deg
+            );
+            /* background-position-x: calc(50% - (0.125 * var(--ScrollWidth) ) ); */
+            background-position-x: 50% ;
+        }
+    }
 }
