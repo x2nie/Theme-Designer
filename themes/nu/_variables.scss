@@ -2,10 +2,12 @@
 body, body *{
     font-family: 'Perfect DOS VGA 437 Win', sans-serif;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 $Background : #858585;
 $ButtonFace: #5b5cfb;
+$AppWorkspace: $ButtonFace;
 $Window: $ButtonFace;
 $CaptionHeight: 1em;
 $ActiveTitle : $ButtonFace;

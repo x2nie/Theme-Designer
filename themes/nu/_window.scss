@@ -10,9 +10,10 @@
         
         display: flex;
         align-items: center;
-
+        
         .title-bar-sys{
             width: 2ch;
+            box-shadow: 1px 0 black;
             // display: flex;
             // float: left;
             align-self: stretch;
@@ -25,6 +26,16 @@
                 box-shadow: none;
                 // width: 2ch;
                 padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &::after{
+                    content: '';
+                    border: 1px solid white;
+                    width: calc(100% - 6px);
+
+                }
             }
         }
 

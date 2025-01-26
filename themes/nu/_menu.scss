@@ -1,0 +1,14 @@
+ul[role=menubar]{
+    padding-inline: 1ch;
+
+    > [role=menuitem]{
+        &::first-letter {
+            color: red;
+        }
+
+        &.selected {
+            background: black !important;
+            color: white !important;
+        }
+    }
+}
