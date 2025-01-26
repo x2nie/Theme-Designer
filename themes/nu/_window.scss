@@ -70,3 +70,13 @@
         color: $ButtonFace;
     }
 }
+
+.window.tool-window {
+    .title-bar{display: none;}
+
+    .window-body{
+        border-top: 2px solid var(--ActiveBorder);
+        padding-top: 1em;
+        color: var(--WindowText);
+    }
+}
