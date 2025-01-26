@@ -1,0 +1,61 @@
+.window {
+    border: none;
+    background: var(--ButtonFace);
+    box-shadow: 2ch 1em rgba(0, 0, 0, 0.315);
+
+    .title-bar {
+        min-height: var(--CaptionHeight, 18px);
+        background: linear-gradient(to right, var(--ActiveTitle), var(--GradientActiveTitle));
+        color: var(--TitleText);
+        
+        display: flex;
+        align-items: center;
+
+        .title-bar-sys{
+            width: 2ch;
+            // display: flex;
+            // float: left;
+            align-self: stretch;
+            
+            button {
+                height: 100%;
+                width: 100%;
+                border: 1px solid white;
+                background: black;
+                box-shadow: none;
+                // width: 2ch;
+                padding: 0;
+            }
+        }
+
+        .title-bar-text {
+            text-align: center;
+        }
+
+        .title-bar-controls {
+            display: none;
+        }
+    }
+
+    &:not(.active) {
+        .title-bar {
+            background: linear-gradient(to right, var(--InactiveTitle), var(--GradientInactiveTitle));
+            color:var(--InactiveTitleText);
+        }
+    }
+
+    
+    .window-body{
+        border: 2px solid var(--ActiveBorder);
+        border-top: none;
+        padding: 0 1ch 1em;
+    }
+}
+
+.window.message-box {
+    background: aquamarine;
+    .title-bar {
+        background: white;
+        color: $ButtonFace;
+    }
+}

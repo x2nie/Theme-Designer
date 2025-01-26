@@ -38,12 +38,24 @@ static template = "theme_preview";
         });
         onWillStart(
             // () => this.switchTheme('win98')
-            ()=> window.parent.postMessage({ready: true})
+            ()=> {
+                window.parent.postMessage({ready: true});
+                this.mayRunStandalone()
+            }
         )
     }
 
+    mayRunStandalone(){
+        // var url_string = "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5"; 
+        var url = new URL(window.location.href);
+        var theme = url.searchParams.get("theme");
+        if(theme){
+            this.switchTheme(theme)
+        }
+    }
+
     async switchTheme(theme){
-        //? host ask for switch of theme.css
+        //? host tell to switch of theme.css
         const styleElement = document.getElementById('the-theme')
         // styleElement.setAttribute('src', `themes/${theme}/${theme}.css`)
         let themeInfo = {ThemeInfo:{Name:null}, Schemes:{}, Variants:[]}
@@ -76,6 +88,12 @@ static template = "theme_preview";
         } catch (error) {
             console.error(`Error loading or injecting CSS content: ${filePath}`, error);
         }
+        
+        //? clear last mod
+        document.body.className = ''
+        document.body.style = ''
+
+
 
         window.parent.postMessage({themeInfo})
         window.requestAnimationFrame(() => {

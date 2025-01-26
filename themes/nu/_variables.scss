@@ -1,0 +1,27 @@
+@import url('https://fonts.cdnfonts.com/css/perfect-dos-vga-437');
+body, body *{
+    font-family: 'Perfect DOS VGA 437 Win', sans-serif;
+    font-size: 16px;
+}
+
+$Background : #858585;
+$ButtonFace: #5b5cfb;
+$Window: $ButtonFace;
+$CaptionHeight: 1em;
+$ActiveTitle : $ButtonFace;
+$GradientActiveTitle: $ActiveTitle;
+$TitleText: #fff;
+
+$ActiveBorder : white;
+
+$InactiveTitle : silver;
+$GradientInactiveTitle: $InactiveTitle;
+$InactiveTitleText : black;
+$InactiveBorder : #c0c0c0;
+
+// $MenuBar: white;
+$Menu: white;
+
+//? Switch visibility between close button (right)  vs sysmenu (left)
+$display-close-button: none;
+$display-sys-button: block;

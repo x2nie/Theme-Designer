@@ -13,6 +13,7 @@
             <!-- <option value="winNT">Win NT Style</option> -->
             <option value="win31">Win 31 Style</option>
             <option value="bluecurve">Bluecurve</option>
+            <option value="nu">Norton Utilities</option>
          </select>
       </div>
    </div>

@@ -18,6 +18,7 @@ export class DesktopTheme extends Component{
         this.state = useState({
             theme: 'win7',
             theme: 'win98',
+            theme: 'nu',
             item: 'Desktop',
             size: 10,
             font: {name:'Arial'},
