@@ -40,20 +40,20 @@ $MenuHilight : rgb(49 106 197) !default;
 $MenuBar : rgb(236 233 216) !default;
 
 //? [Metrics].NonclientMetrics
-$BorderWidth: 1;
-$ScrollHeight: 13;
-$ScrollWidth: 13;
-$CaptionWidth: 18;
-$CaptionHeight: 18;
-$SmCaptionWidth: 15;
-$SmCaptionHeight: 15;
-$MenuHeight: 18; //menubar.height
-$MenuWidth: 18;  //popup.min-width?
+$BorderWidth: 1 !default;
+$ScrollHeight: 13 !default;
+$ScrollWidth: 13 !default;
+$CaptionWidth: 18 !default;
+$CaptionHeight: 18 !default;
+$SmCaptionWidth: 15 !default;
+$SmCaptionHeight: 15 !default;
+$MenuHeight: 18 !default; //menubar.height
+$MenuWidth: 18 !default;  //popup.min-width?
 
 //? [Metrics].IconMetrics
-$HorzSpacing: 43;
-$VertSpacing: 75;
-$TitleWrap: 1;
+$HorzSpacing: 43 !default;
+$VertSpacing: 75 !default;
+$TitleWrap: 1 !default;
 // $IconFont:
 
 
@@ -84,8 +84,8 @@ $etched-out-border-image: none !default;
     --MenuHeight: #{$MenuHeight}px;
     --MenuWidth: #{$MenuWidth}px;
 
-    --HorzSpacing: #{$HorzSpacing}px;
-    --VertSpacing: #{$VertSpacing}px;
+    --HorzSpacing: #{$HorzSpacing};
+    --VertSpacing: #{$VertSpacing};
 
     --ActiveTitle: #{$ActiveTitle};
     --Background: #{$Background};

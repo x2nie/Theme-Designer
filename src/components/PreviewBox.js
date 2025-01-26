@@ -1,5 +1,5 @@
 // const { Component, useState, mount, loadFile, xml } = owl;
-import { Component, useState, mount, loadFile, xml, onWillStart, useEffect } from '@odoo/owl';
+import { Component, useState, mount, loadFile, xml, onWillStart, useEffect, onMounted } from '@odoo/owl';
 import { spec, win95_colors } from "./spec";
 // import { parseCustomJSON } from './cssThemeInfo';
 
@@ -39,6 +39,11 @@ static template = "theme_preview";
         onWillStart(
             // () => this.switchTheme('win98')
             ()=> {
+                const themeStyle = document.getElementById("the-theme");
+                if (themeStyle) {
+                    themeStyle.remove(); // Hapus elemen dari posisi awal
+                    document.head.appendChild(themeStyle); // Tambahkan kembali di akhir <head>
+                }
                 window.parent.postMessage({ready: true});
                 this.mayRunStandalone()
             }
@@ -198,3 +203,10 @@ function splitOnce(str, delimiter) {
     // @ts-ignore
     mount(Root, document.body, { env, templates, });
 })();
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     const specificStyle = document.getElementById("the-theme");
+//     if (specificStyle) {
+//       document.head.appendChild(specificStyle);
+//     }
+// });

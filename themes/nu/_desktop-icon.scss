@@ -1,0 +1,45 @@
+desktop-icons {
+    #network {display: none;}
+
+    --di-my-computer: url(image/drive-a.png);
+    --di-my-documents: url(image/drive-c.png);
+    --di-recycle-bin: url(image/drive-e.png);
+
+    di {
+        flex-direction: row ;
+        // background-color: white;
+        padding-inline: 1ch;
+        color: var(--ButtonFace);
+        
+
+        &::before{
+            background-color: white;
+            padding-inline: 1ch;
+            height: 1em;
+            width: 2ch;
+            background-size: contain;
+            padding-inline: 1ch;
+            box-shadow: 1ch 0.5em #000000;
+        }
+        
+        i {
+            display: none;
+            // span {display: none;}
+        }
+        &::after{
+            background-color: white;
+            // padding-right: 0.5em;
+            box-shadow: 1ch 0.5em #000000;
+        }
+
+        &#my-computer::after{
+            content: 'A:';
+        }
+        &#my-documents::after{
+            content: 'C:';
+        }
+        &#recycle-bin::after{
+            content: 'E:';
+        }
+    }
+}
